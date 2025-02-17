@@ -1,0 +1,224 @@
+<div
+  class="container mt-5"
+  id="container"
+  [ngClass]="{ 'right-panel-active': isSignUp }"
+>
+  <div class="form-container sign-in-container">
+    <form
+      (submit)="login($event, email.value, password.value)"
+      #loginForm="ngForm"
+    >
+      <h1>Sign In</h1>
+      <input
+        type="email"
+        #email="ngModel"
+        ngModel
+        name="loginEmail"
+        placeholder="Email"
+        required
+        email
+      />
+      <div
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="small-error"
+      >
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']"
+          >Must be a valid email format.</small
+        >
+      </div>
+      <div class="password-container">
+        <input
+          [type]="showLoginPassword ? 'text' : 'password'"
+          #password="ngModel"
+          ngModel
+          name="password"
+          placeholder="Password"
+          required
+          minlength="6"
+        />
+        <button type="button" (click)="toggleLoginPasswordVisibility()">
+          <i
+            class="fa"
+            [ngClass]="showLoginPassword ? 'fa-eye-slash' : 'fa-eye'"
+          ></i>
+        </button>
+      </div>
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="small-error"
+      >
+        <small *ngIf="password.errors?.['required']"
+          >Password is required.</small
+        >
+        <small *ngIf="password.errors?.['minlength']"
+          >Password must be at least 6 characters long.</small
+        >
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
+    </form>
+  </div>
+
+  <div class="form-container sign-up-container">
+    <!-- <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit($event)"> -->
+    <form [formGroup]="registerForm">
+      <strong style="font-size: 30px">Create Account</strong>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Name"
+        (input)="validateName()"
+      />
+      <div
+        *ngIf="
+          registerForm.get('name')?.invalid && registerForm.get('name')?.touched
+        "
+        class="small-error"
+      >
+        <small *ngIf="registerForm.get('name')?.errors?.['required']"
+          >Name is required.</small
+        >
+        <small *ngIf="registerForm.get('name')?.errors?.['nombreInvalido']"
+          >Name can only contain letters and must have at least 3
+          characters.</small
+        >
+      </div>
+      <input type="email" formControlName="email" placeholder="Email" />
+      <div
+        *ngIf="
+          registerForm.get('email')?.invalid &&
+          registerForm.get('email')?.touched
+        "
+        class="small-error"
+      >
+        <small *ngIf="registerForm.get('email')?.errors?.['required']"
+          >Email is required.</small
+        >
+        <small *ngIf="registerForm.get('email')?.errors?.['correoInvalido']"
+          >Must be a valid email format.</small
+        >
+      </div>
+      <div class="password-container">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <button type="button" (click)="togglePasswordVisibility()">
+          <i
+            class="fa"
+            [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+          ></i>
+        </button>
+      </div>
+      <div
+        *ngIf="
+          registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched
+        "
+        class="small-error"
+      >
+        <small *ngIf="registerForm.get('password')?.errors?.['required']"
+          >Password is required.</small
+        >
+        <small *ngIf="registerForm.get('password')?.errors?.['minlength']"
+          >Password must be at least 6 characters long.</small
+        >
+      </div>
+      <input
+        type="text"
+        formControlName="phone"
+        placeholder="Phone"
+        minlength="10"
+        maxlength="10"
+        (input)="validatePhone($event)"
+      />
+      <div
+        *ngIf="
+          registerForm.get('phone')?.invalid &&
+          registerForm.get('phone')?.touched
+        "
+        class="small-error"
+      >
+        <small *ngIf="registerForm.get('phone')?.errors?.['required']"
+          >Phone number is required.</small
+        >
+        <small
+          *ngIf="registerForm.get('phone')?.errors?.['minlength'] || registerForm.get('phone')?.errors?.['maxlength']"
+          >Must be exactly 10 digits.</small
+        >
+      </div>
+      <input
+        type="date"
+        formControlName="birthdate"
+        placeholder="Date of Birth"
+      />
+      <div
+        *ngIf="
+          registerForm.get('birthdate')?.invalid &&
+          registerForm.get('birthdate')?.touched
+        "
+        class="small-error"
+      >
+        <small *ngIf="registerForm.get('birthdate')?.errors?.['required']"
+          >Date of birth is required.</small
+        >
+        <small *ngIf="registerForm.get('birthdate')?.errors?.['minimumAge']"
+          >You must be at least 16 years old.</small
+        >
+      </div>
+
+      <select formControlName="province" required>
+        <option value="">Select a province</option>
+        <option *ngFor="let province of provinces" [value]="province.id">
+          {{ province.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          registerForm.get('province')?.invalid &&
+          registerForm.get('province')?.touched
+        "
+        class="small-error"
+      >
+        <small>Province is required.</small>
+      </div>
+
+      <select formControlName="gender" required>
+        <option value="">Select a gender</option>
+        <option *ngFor="let gender of genders" [value]="gender.id">
+          {{ gender.gender }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          registerForm.get('gender')?.invalid &&
+          registerForm.get('gender')?.touched
+        "
+        class="small-error"
+      >
+        <small>Gender is required.</small>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>
+          To stay connected with us, please sign in with your personal
+          information.
+        </p>
+        <button class="ghost" (click)="showSignIn()">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start your journey with us.</p>
+        <button class="ghost" (click)="showSignUp()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
