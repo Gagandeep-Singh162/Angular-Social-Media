@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -14,6 +12,62 @@ body {
   height: 100vh;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+}
+
+.language-select-container {
+  margin-top: 20px; /* Matches spacing above inputs/buttons */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centers the dropdown horizontally */
+}
+
+.language-select {
+  background-color: #eee; /* Slightly lighter than button for contrast */
+  border: 1px solid #ff4b2b; /* Matches button border */
+  padding: 12px 45px; /* Exact padding as the Sign In button */
+  width: auto; /* Allows natural width based on content and padding */
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px; /* Matches button font-size */
+  font-weight: bold; /* Matches button font-weight */
+  text-transform: uppercase; /* Matches button text-transform */
+  letter-spacing: 1px; /* Matches button letter-spacing */
+  border-radius: 20px; /* Matches button border-radius */
+  text-align: center; /* Centers the selected option text */
+  color: #333; /* Darker text for readability */
+  -webkit-appearance: none; /* Removes default arrow in Webkit browsers */
+  -moz-appearance: none; /* Removes default arrow in Firefox */
+  appearance: none; /* Removes default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><path fill="%23ff4b2b" d="M0 0l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Positions arrow consistently */
+  cursor: pointer;
+  display: inline-block; /* Ensures it respects padding */
+  text-align-last: center; /* Ensures selected option is centered in some browsers */
+}
+
+/* Style the dropdown options when open */
+.language-select option {
+  text-align: start; /* Centers options in the dropdown list */
+  background-color: #fff; /* Clean background for options */
+  color: #333;
+  padding: 10px; /* Consistent spacing */
+  font-weight: normal; /* Options don’t need bold text */
+  text-transform: none; /* Normal case for readability */
+}
+
+/* Focus and hover effects */
+.language-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff4b2b; /* Matches button focus style */
+}
+
+.language-select:hover {
+  background-color: #e0e0e0; /* Subtle hover effect */
+}
+
+/* Ensure form spacing */
+form {
+  padding-bottom: 20px; /* Prevents cutoff at the bottom */
 }
 
 h1 {

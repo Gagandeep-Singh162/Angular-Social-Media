@@ -7,11 +7,12 @@ import { SessionService } from '../../services/session.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from '../../services/category.service';
 import { NewPostService } from '../../services/new-post.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
 })

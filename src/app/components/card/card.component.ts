@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { CommentsComponent } from "../comments/comments.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
@@ -18,7 +19,8 @@ import { CommentsComponent } from "../comments/comments.component";
     MatButtonModule,
     CommonModule,
     FormsModule,
-    CommentsComponent
+    CommentsComponent,
+    TranslateModule
 ],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],

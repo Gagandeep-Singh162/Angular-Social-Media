@@ -8,13 +8,13 @@
       (submit)="login($event, email.value, password.value)"
       #loginForm="ngForm"
     >
-      <h1>Sign In</h1>
+      <h1>{{ "auth.sign_in.title" | translate }}</h1>
       <input
         type="email"
         #email="ngModel"
         ngModel
         name="loginEmail"
-        placeholder="Email"
+        placeholder="{{ 'auth.sign_in.email_placeholder' | translate }}"
         required
         email
       />
@@ -22,10 +22,12 @@
         *ngIf="email.invalid && (email.dirty || email.touched)"
         class="small-error"
       >
-        <small *ngIf="email.errors?.['required']">Email is required.</small>
-        <small *ngIf="email.errors?.['email']"
-          >Must be a valid email format.</small
-        >
+        <small *ngIf="email.errors?.['required']">{{
+          "auth.sign_in.email_required" | translate
+        }}</small>
+        <small *ngIf="email.errors?.['email']">{{
+          "auth.sign_in.email_invalid" | translate
+        }}</small>
       </div>
       <div class="password-container">
         <input
@@ -33,7 +35,7 @@
           #password="ngModel"
           ngModel
           name="password"
-          placeholder="Password"
+          placeholder="{{ 'auth.sign_in.password_placeholder' | translate }}"
           required
           minlength="6"
         />
@@ -48,26 +50,36 @@
         *ngIf="password.invalid && (password.dirty || password.touched)"
         class="small-error"
       >
-        <small *ngIf="password.errors?.['required']"
-          >Password is required.</small
-        >
-        <small *ngIf="password.errors?.['minlength']"
-          >Password must be at least 6 characters long.</small
-        >
+        <small *ngIf="password.errors?.['required']">{{
+          "auth.sign_in.password_required" | translate
+        }}</small>
+        <small *ngIf="password.errors?.['minlength']">{{
+          "auth.sign_in.password_minlength" | translate
+        }}</small>
       </div>
-
-      <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
+      <button type="submit" [disabled]="loginForm.invalid">
+        {{ "auth.sign_in.submit" | translate }}
+      </button>
+      <!-- Language Dropdown with Adjusted Container -->
+      <div class="language-select-container">
+        <select (change)="switchLanguage($event)" class="language-select">
+          <option value="en">{{ "auth.language.english" | translate }}</option>
+          <option value="es">{{ "auth.language.spanish" | translate }}</option>
+          <option value="hi">{{ "auth.language.hindi" | translate }}</option>
+        </select>
+      </div>
     </form>
   </div>
 
   <div class="form-container sign-up-container">
-    <!-- <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit($event)"> -->
     <form [formGroup]="registerForm">
-      <strong style="font-size: 30px">Create Account</strong>
+      <strong style="font-size: 30px">{{
+        "auth.sign_up.title" | translate
+      }}</strong>
       <input
         type="text"
         formControlName="name"
-        placeholder="Name"
+        placeholder="{{ 'auth.sign_up.name_placeholder' | translate }}"
         (input)="validateName()"
       />
       <div
@@ -76,15 +88,18 @@
         "
         class="small-error"
       >
-        <small *ngIf="registerForm.get('name')?.errors?.['required']"
-          >Name is required.</small
-        >
-        <small *ngIf="registerForm.get('name')?.errors?.['nombreInvalido']"
-          >Name can only contain letters and must have at least 3
-          characters.</small
-        >
+        <small *ngIf="registerForm.get('name')?.errors?.['required']">{{
+          "auth.sign_up.name_required" | translate
+        }}</small>
+        <small *ngIf="registerForm.get('name')?.errors?.['nombreInvalido']">{{
+          "auth.sign_up.name_invalid" | translate
+        }}</small>
       </div>
-      <input type="email" formControlName="email" placeholder="Email" />
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="{{ 'auth.sign_up.email_placeholder' | translate }}"
+      />
       <div
         *ngIf="
           registerForm.get('email')?.invalid &&
@@ -92,18 +107,18 @@
         "
         class="small-error"
       >
-        <small *ngIf="registerForm.get('email')?.errors?.['required']"
-          >Email is required.</small
-        >
-        <small *ngIf="registerForm.get('email')?.errors?.['correoInvalido']"
-          >Must be a valid email format.</small
-        >
+        <small *ngIf="registerForm.get('email')?.errors?.['required']">{{
+          "auth.sign_up.email_required" | translate
+        }}</small>
+        <small *ngIf="registerForm.get('email')?.errors?.['correoInvalido']">{{
+          "auth.sign_up.email_invalid" | translate
+        }}</small>
       </div>
       <div class="password-container">
         <input
           [type]="showPassword ? 'text' : 'password'"
           formControlName="password"
-          placeholder="Password"
+          placeholder="{{ 'auth.sign_up.password_placeholder' | translate }}"
         />
         <button type="button" (click)="togglePasswordVisibility()">
           <i
@@ -119,17 +134,17 @@
         "
         class="small-error"
       >
-        <small *ngIf="registerForm.get('password')?.errors?.['required']"
-          >Password is required.</small
-        >
-        <small *ngIf="registerForm.get('password')?.errors?.['minlength']"
-          >Password must be at least 6 characters long.</small
-        >
+        <small *ngIf="registerForm.get('password')?.errors?.['required']">{{
+          "auth.sign_up.password_required" | translate
+        }}</small>
+        <small *ngIf="registerForm.get('password')?.errors?.['minlength']">{{
+          "auth.sign_up.password_minlength" | translate
+        }}</small>
       </div>
       <input
         type="text"
         formControlName="phone"
-        placeholder="Phone"
+        placeholder="{{ 'auth.sign_up.phone_placeholder' | translate }}"
         minlength="10"
         maxlength="10"
         (input)="validatePhone($event)"
@@ -141,18 +156,18 @@
         "
         class="small-error"
       >
-        <small *ngIf="registerForm.get('phone')?.errors?.['required']"
-          >Phone number is required.</small
-        >
+        <small *ngIf="registerForm.get('phone')?.errors?.['required']">{{
+          "auth.sign_up.phone_required" | translate
+        }}</small>
         <small
           *ngIf="registerForm.get('phone')?.errors?.['minlength'] || registerForm.get('phone')?.errors?.['maxlength']"
-          >Must be exactly 10 digits.</small
+          >{{ "auth.sign_up.phone_invalid" | translate }}</small
         >
       </div>
       <input
         type="date"
         formControlName="birthdate"
-        placeholder="Date of Birth"
+        placeholder="{{ 'auth.sign_up.birthdate_placeholder' | translate }}"
       />
       <div
         *ngIf="
@@ -161,16 +176,17 @@
         "
         class="small-error"
       >
-        <small *ngIf="registerForm.get('birthdate')?.errors?.['required']"
-          >Date of birth is required.</small
-        >
-        <small *ngIf="registerForm.get('birthdate')?.errors?.['minimumAge']"
-          >You must be at least 16 years old.</small
-        >
+        <small *ngIf="registerForm.get('birthdate')?.errors?.['required']">{{
+          "auth.sign_up.birthdate_required" | translate
+        }}</small>
+        <small *ngIf="registerForm.get('birthdate')?.errors?.['minimumAge']">{{
+          "auth.sign_up.birthdate_min_age" | translate
+        }}</small>
       </div>
-
       <select formControlName="province" required>
-        <option value="">Select a province</option>
+        <option value="">
+          {{ "auth.sign_up.select_province" | translate }}
+        </option>
         <option *ngFor="let province of provinces" [value]="province.id">
           {{ province.name }}
         </option>
@@ -182,11 +198,10 @@
         "
         class="small-error"
       >
-        <small>Province is required.</small>
+        <small>{{ "auth.sign_up.province_required" | translate }}</small>
       </div>
-
       <select formControlName="gender" required>
-        <option value="">Select a gender</option>
+        <option value="">{{ "auth.sign_up.select_gender" | translate }}</option>
         <option *ngFor="let gender of genders" [value]="gender.id">
           {{ gender.gender }}
         </option>
@@ -198,26 +213,27 @@
         "
         class="small-error"
       >
-        <small>Gender is required.</small>
+        <small>{{ "auth.sign_up.gender_required" | translate }}</small>
       </div>
-
-      <button type="submit">Register</button>
+      <button type="submit">{{ "auth.sign_up.submit" | translate }}</button>
     </form>
   </div>
+
   <div class="overlay-container">
     <div class="overlay">
       <div class="overlay-panel overlay-left">
-        <h1>Welcome Back!</h1>
-        <p>
-          To stay connected with us, please sign in with your personal
-          information.
-        </p>
-        <button class="ghost" (click)="showSignIn()">Sign In</button>
+        <h1>{{ "auth.overlay.welcome_back" | translate }}</h1>
+        <p>{{ "auth.overlay.sign_in_prompt" | translate }}</p>
+        <button class="ghost" (click)="showSignIn()">
+          {{ "auth.overlay.sign_in" | translate }}
+        </button>
       </div>
       <div class="overlay-panel overlay-right">
-        <h1>Hello, Friend!</h1>
-        <p>Enter your personal details and start your journey with us.</p>
-        <button class="ghost" (click)="showSignUp()">Register</button>
+        <h1>{{ "auth.overlay.hello_friend" | translate }}</h1>
+        <p>{{ "auth.overlay.register_prompt" | translate }}</p>
+        <button class="ghost" (click)="showSignUp()">
+          {{ "auth.overlay.register" | translate }}
+        </button>
       </div>
     </div>
   </div>

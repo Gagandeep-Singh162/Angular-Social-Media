@@ -43,6 +43,11 @@
           </li>
         </ng-template>
       </ul>
+      <select (change)="switchLanguage($any($event.target).value)">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+      </select>
     </div>
   </div>
 </nav>

@@ -1,0 +1,101 @@
+{
+  "card": {
+    "unknown_user": "Unknown User",
+    "delete": "Delete",
+    "uncategorized": "Uncategorized",
+    "blog_post_image": "Blog post cover image"
+  },
+  "comments": {
+    "title": "Comments",
+    "edit": "Edit",
+    "delete": "Delete",
+    "expand": "Expand",
+    "save": "Save",
+    "cancel": "Cancel",
+    "write_response_placeholder": "Write a response...",
+    "reply": "Reply",
+    "write_comment_placeholder": "Write a new comment...",
+    "add_comment": "Add Comment"
+  },
+  "auth": {
+    "sign_in": {
+      "title": "Sign In",
+      "email_placeholder": "Email",
+      "password_placeholder": "Password",
+      "submit": "Sign In",
+      "email_required": "Email is required.",
+      "email_invalid": "Must be a valid email format.",
+      "password_required": "Password is required.",
+      "password_minlength": "Password must be at least 6 characters long."
+    },
+    "sign_up": {
+      "title": "Create Account",
+      "name_placeholder": "Name",
+      "name_required": "Name is required.",
+      "name_invalid": "Name can only contain letters and must have at least 3 characters.",
+      "email_placeholder": "Email",
+      "email_required": "Email is required.",
+      "email_invalid": "Must be a valid email format.",
+      "password_placeholder": "Password",
+      "password_required": "Password is required.",
+      "password_minlength": "Password must be at least 6 characters long.",
+      "phone_placeholder": "Phone",
+      "phone_required": "Phone number is required.",
+      "phone_invalid": "Must be exactly 10 digits.",
+      "birthdate_placeholder": "Date of Birth",
+      "birthdate_required": "Date of birth is required.",
+      "birthdate_min_age": "You must be at least 16 years old.",
+      "select_province": "Select a province",
+      "province_required": "Province is required.",
+      "select_gender": "Select a gender",
+      "gender_required": "Gender is required.",
+      "submit": "Register"
+    },
+    "overlay": {
+      "welcome_back": "Welcome Back!",
+      "sign_in_prompt": "To stay connected with us, please sign in with your personal information.",
+      "sign_in": "Sign In",
+      "hello_friend": "Hello, Friend!",
+      "register_prompt": "Enter your personal details and start your journey with us.",
+      "register": "Register"
+    },
+    "language": {
+      "english": "English",
+      "spanish": "Spanish",
+      "hindi": "Hindi"
+    }
+  },
+  "publish": {
+    "title": "Publish",
+    "description": "Share something new with your community.",
+    "form": {
+      "title_label": "Title",
+      "title_placeholder": "Write a title",
+      "title_required": "The title is required.",
+      "category_label": "Category",
+      "category_required": "The category is required.",
+      "description_label": "Description",
+      "description_placeholder": "Write a description",
+      "description_required": "The description is required.",
+      "image_label": "Image",
+      "image_placeholder": "Drag and drop your image here or click to select a file",
+      "image_alt": "Uploaded image preview"
+    }
+  },
+  "users": {
+    "search_label": "Search",
+    "search_placeholder": "Search by name, email, phone, etc.",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "birthdate": "Birthdate",
+      "status": "Status",
+      "status_active": "Active",
+      "status_inactive": "Inactive",
+      "actions": "Actions"
+    },
+    "paginator_label": "Select page",
+    "add_button": "Add New User"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "card": {
+    "unknown_user": "Usuario Desconocido",
+    "delete": "Eliminar",
+    "uncategorized": "Sin Categoría",
+    "blog_post_image": "Imagen de portada del artículo"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "expand": "Expandir",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "write_response_placeholder": "Escribe una respuesta...",
+    "reply": "Responder",
+    "write_comment_placeholder": "Escribe un nuevo comentario...",
+    "add_comment": "Agregar Comentario"
+  },
+  "auth": {
+    "sign_in": {
+      "title": "Iniciar Sesión",
+      "email_placeholder": "Correo electrónico",
+      "password_placeholder": "Contraseña",
+      "submit": "Iniciar Sesión",
+      "email_required": "El correo electrónico es requerido.",
+      "email_invalid": "Debe ser un formato de correo electrónico válido.",
+      "password_required": "La contraseña es requerida.",
+      "password_minlength": "La contraseña debe tener al menos 6 caracteres."
+    },
+    "sign_up": {
+      "title": "Crear Cuenta",
+      "name_placeholder": "Nombre",
+      "name_required": "El nombre es requerido.",
+      "name_invalid": "El nombre solo puede contener letras y debe tener al menos 3 caracteres.",
+      "email_placeholder": "Correo electrónico",
+      "email_required": "El correo electrónico es requerido.",
+      "email_invalid": "Debe ser un formato de correo electrónico válido.",
+      "password_placeholder": "Contraseña",
+      "password_required": "La contraseña es requerida.",
+      "password_minlength": "La contraseña debe tener al menos 6 caracteres.",
+      "phone_placeholder": "Teléfono",
+      "phone_required": "El número de teléfono es requerido.",
+      "phone_invalid": "Debe tener exactamente 10 dígitos.",
+      "birthdate_placeholder": "Fecha de Nacimiento",
+      "birthdate_required": "La fecha de nacimiento es requerida.",
+      "birthdate_min_age": "Debes tener al menos 16 años.",
+      "select_province": "Selecciona una provincia",
+      "province_required": "La provincia es requerida.",
+      "select_gender": "Selecciona un género",
+      "gender_required": "El género es requerido.",
+      "submit": "Registrarse"
+    },
+    "overlay": {
+      "welcome_back": "¡Bienvenido de nuevo!",
+      "sign_in_prompt": "Para mantenerte conectado con nosotros, por favor inicia sesión con tu información personal.",
+      "sign_in": "Iniciar Sesión",
+      "hello_friend": "¡Hola, Amigo!",
+      "register_prompt": "Ingresa tus detalles personales y comienza tu viaje con nosotros.",
+      "register": "Registrarse"
+    },
+    "language": {
+      "english": "Inglés",
+      "spanish": "Español",
+      "hindi": "Hindi"
+    }
+  },
+  "publish": {
+    "title": "Publicar",
+    "description": "Comparte algo nuevo con tu comunidad.",
+    "form": {
+      "title_label": "Título",
+      "title_placeholder": "Escribe un título",
+      "title_required": "El título es requerido.",
+      "category_label": "Categoría",
+      "category_required": "La categoría es requerida.",
+      "description_label": "Descripción",
+      "description_placeholder": "Escribe una descripción",
+      "description_required": "La descripción es requerida.",
+      "image_label": "Imagen",
+      "image_placeholder": "Arrastra y suelta tu imagen aquí o haz clic para seleccionar un archivo",
+      "image_alt": "Vista previa de la imagen cargada"
+    }
+  },
+  "users": {
+    "search_label": "Buscar",
+    "search_placeholder": "Buscar por nombre, correo, teléfono, etc.",
+    "table": {
+      "name": "Nombre",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "birthdate": "Fecha de Nacimiento",
+      "status": "Estado",
+      "status_active": "Activo",
+      "status_inactive": "Inactivo",
+      "actions": "Acciones"
+    },
+    "paginator_label": "Seleccionar página",
+    "add_button": "Agregar Nuevo Usuario"
+  }
+}

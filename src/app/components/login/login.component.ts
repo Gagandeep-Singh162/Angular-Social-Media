@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 // import { SessionService } from '../../services/shared/session.service';
 import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -23,7 +24,13 @@ import { SessionService } from '../../services/session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule,
+  ],
   // providers: [UsersService, userService],
 })
 export class LoginComponent {
@@ -38,7 +45,8 @@ export class LoginComponent {
     private sessionService: SessionService,
     private userService: UserService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private translate: TranslateService
   ) {
     this.registerForm = this.fb.group({
       name: new FormControl('', [
@@ -63,6 +71,15 @@ export class LoginComponent {
       gender: ['', [Validators.required]],
       status: [2], // Hidden field with default value 2
     });
+  }
+
+  switchLanguage(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    if (target) {
+      const language = target.value;
+      this.translate.use(language);
+      localStorage.setItem('language', language);
+    }
   }
 
   ngOnInit(): void {

@@ -1,0 +1,101 @@
+{
+  "card": {
+    "unknown_user": "अज्ञात उपयोगकर्ता",
+    "delete": "हटाएं",
+    "uncategorized": "अवर्गीकृत",
+    "blog_post_image": "ब्लॉग पोस्ट कवर छवि"
+  },
+  "comments": {
+    "title": "टिप्पणियाँ",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "expand": "विस्तार करें",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "write_response_placeholder": "एक प्रतिक्रिया लिखें...",
+    "reply": "जवाब दें",
+    "write_comment_placeholder": "एक नई टिप्पणी लिखें...",
+    "add_comment": "टिप्पणी जोड़ें"
+  },
+  "auth": {
+    "sign_in": {
+      "title": "साइन इन",
+      "email_placeholder": "ईमेल",
+      "password_placeholder": "पासवर्ड",
+      "submit": "साइन इन",
+      "email_required": "ईमेल आवश्यक है।",
+      "email_invalid": "मान्य ईमेल प्रारूप होना चाहिए।",
+      "password_required": "पासवर्ड आवश्यक है।",
+      "password_minlength": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।"
+    },
+    "sign_up": {
+      "title": "खाता बनाएं",
+      "name_placeholder": "नाम",
+      "name_required": "नाम आवश्यक है।",
+      "name_invalid": "नाम में केवल अक्षर हो सकते हैं और कम से कम 3 अक्षर होने चाहिए।",
+      "email_placeholder": "ईमेल",
+      "email_required": "ईमेल आवश्यक है।",
+      "email_invalid": "मान्य ईमेल प्रारूप होना चाहिए।",
+      "password_placeholder": "पासवर्ड",
+      "password_required": "पासवर्ड आवश्यक है।",
+      "password_minlength": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+      "phone_placeholder": "फ़ोन",
+      "phone_required": "फ़ोन नंबर आवश्यक है।",
+      "phone_invalid": "ठीक 10 अंकों का होना चाहिए।",
+      "birthdate_placeholder": "जन्म तिथि",
+      "birthdate_required": "जन्म तिथि आवश्यक है।",
+      "birthdate_min_age": "आपकी उम्र कम से कम 16 वर्ष होनी चाहिए।",
+      "select_province": "एक प्रांत चुनें",
+      "province_required": "प्रांत आवश्यक है।",
+      "select_gender": "लिंग चुनें",
+      "gender_required": "लिंग आवश्यक है।",
+      "submit": "रजिस्टर"
+    },
+    "overlay": {
+      "welcome_back": "वापसी पर स्वागत है!",
+      "sign_in_prompt": "हमसे जुड़े रहने के लिए, कृपया अपनी व्यक्तिगत जानकारी से साइन इन करें।",
+      "sign_in": "साइन इन",
+      "hello_friend": "नमस्ते, दोस्त!",
+      "register_prompt": "अपनी व्यक्तिगत जानकारी दर्ज करें और हमारे साथ अपनी यात्रा शुरू करें।",
+      "register": "रजिस्टर"
+    },
+    "language": {
+      "english": "अंग्रेज़ी",
+      "spanish": "स्पेनिश",
+      "hindi": "हिन्दी"
+    }
+  },
+  "publish": {
+    "title": "प्रकाशित करें",
+    "description": "अपने समुदाय के साथ कुछ नया साझा करें।",
+    "form": {
+      "title_label": "शीर्षक",
+      "title_placeholder": "एक शीर्षक लिखें",
+      "title_required": "शीर्षक आवश्यक है।",
+      "category_label": "श्रेणी",
+      "category_required": "श्रेणी आवश्यक है।",
+      "description_label": "विवरण",
+      "description_placeholder": "एक विवरण लिखें",
+      "description_required": "विवरण आवश्यक है।",
+      "image_label": "छवि",
+      "image_placeholder": "अपनी छवि यहाँ खींचें और छोड़ें या फ़ाइल चुनने के लिए क्लिक करें",
+      "image_alt": "अपलोड की गई छवि का पूर्वावलोकन"
+    }
+  },
+  "users": {
+    "search_label": "खोजें",
+    "search_placeholder": "नाम, ईमेल, फोन आदि से खोजें",
+    "table": {
+      "name": "नाम",
+      "email": "ईमेल",
+      "phone": "फोन",
+      "birthdate": "जन्म तिथि",
+      "status": "स्थिति",
+      "status_active": "सक्रिय",
+      "status_inactive": "निष्क्रिय",
+      "actions": "कार्रवाइयाँ"
+    },
+    "paginator_label": "पृष्ठ चुनें",
+    "add_button": "नया उपयोगकर्ता जोड़ें"
+  }
+}

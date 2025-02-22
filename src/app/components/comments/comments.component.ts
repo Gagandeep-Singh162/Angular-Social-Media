@@ -10,11 +10,12 @@ import {
 import { UserListService, User } from '../../services/userList.service';
 import { SessionService } from '../../services/session.service';
 import { UserService } from '../../services/user.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss'],
 })

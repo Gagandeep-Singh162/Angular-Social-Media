@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-table',
@@ -23,12 +24,13 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
 })
 export class UserDataComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  
+
   displayedColumns: string[] = [
     'name',
     'email',
@@ -44,9 +46,7 @@ export class UserDataComponent implements OnInit {
   pageIndex = 0;
   searchValue = '';
 
-  constructor(private userService: UserDataService) {
-    
-  }
+  constructor(private userService: UserDataService) {}
 
   ngOnInit(): void {
     this.loadUsers();
