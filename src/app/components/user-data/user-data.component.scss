@@ -1,0 +1,21 @@
+.search-container {
+  margin: 16px;
+  width: calc(100% - 32px); // Accounts for the margins
+
+  mat-form-field {
+    width: 100%;
+    display: block;
+  }
+}
+
+.table-container {
+  margin: 16px;
+
+  table {
+    width: 100%;
+  }
+
+  button[mat-raised-button] {
+    margin-top: 16px;
+  }
+}
