@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UserDataService, User } from '../../services/User-Data.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,6 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { User, UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-table',
@@ -46,7 +46,7 @@ export class UserDataComponent implements OnInit {
   pageIndex = 0;
   searchValue = '';
 
-  constructor(private userService: UserDataService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.loadUsers();

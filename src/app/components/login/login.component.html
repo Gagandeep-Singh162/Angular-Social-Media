@@ -72,7 +72,9 @@
   </div>
 
   <div class="form-container sign-up-container">
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm"
+    (submit)="onRegisterFormSubmit($event)"
+      #loginForm="ngForm">
       <strong style="font-size: 30px">{{
         "auth.sign_up.title" | translate
       }}</strong>

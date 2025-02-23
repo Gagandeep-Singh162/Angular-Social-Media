@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 1,
       "title": "First Post",
       "content": "This is the content of the first post.",
@@ -14,7 +14,7 @@
       "image": "https://picsum.photos/800/400"
     },
     {
-      "id": 2,
+      "id": "2",
       "user_id": 2,
       "title": "Second Post",
       "content": "This is the content of the second post.",
@@ -27,7 +27,7 @@
       "image": null
     },
     {
-      "id": 3,
+      "id": "3",
       "user_id": 3,
       "title": "Third Post",
       "content": "This is the content of the third post.",
@@ -40,7 +40,7 @@
       "image": null
     },
     {
-      "id": 4,
+      "id": "4",
       "user_id": 2,
       "title": "Fourth Post",
       "content": "This is the content of the Fourth post.",
@@ -55,7 +55,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@example.com",
       "password": "hashed_password_123",
@@ -69,7 +69,7 @@
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Smith",
       "email": "jane@example.com",
       "password": "hashed_password_456",
@@ -91,7 +91,7 @@
       "status": 1
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Alice Johnson",
       "email": "alice@example.com",
       "phone": "5551234567",
@@ -99,7 +99,7 @@
       "status": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Bob Brown",
       "email": "bob@example.com",
       "phone": "5559876543",
@@ -107,7 +107,7 @@
       "status": 2
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Charlie Davis",
       "email": "charlie@example.com",
       "phone": "5554567890",
@@ -115,7 +115,7 @@
       "status": 1
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Diana Evans",
       "email": "diana@example.com",
       "phone": "5553216547",
@@ -123,7 +123,7 @@
       "status": 2
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Evan Fox",
       "email": "evan@example.com",
       "phone": "5557891234",
@@ -131,7 +131,7 @@
       "status": 1
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Fiona Green",
       "email": "fiona@example.com",
       "phone": "5556549870",
@@ -139,7 +139,7 @@
       "status": 1
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "George Hill",
       "email": "george@example.com",
       "phone": "5551472589",
@@ -147,7 +147,7 @@
       "status": 2
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Hannah Ivy",
       "email": "hannah@example.com",
       "phone": "5553692581",
@@ -155,7 +155,7 @@
       "status": 1
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Ian James",
       "email": "ian@example.com",
       "phone": "5558521470",
@@ -163,7 +163,7 @@
       "status": 2
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Julia King",
       "email": "julia@example.com",
       "phone": "5557419630",
@@ -171,7 +171,7 @@
       "status": 1
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Kevin Lee",
       "email": "kevin@example.com",
       "phone": "5552583690",
@@ -179,7 +179,7 @@
       "status": 2
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Laura Miller",
       "email": "laura@example.com",
       "phone": "5559631470",
@@ -187,7 +187,7 @@
       "status": 1
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Mike Nelson",
       "email": "mike@example.com",
       "phone": "5551478520",
@@ -195,7 +195,7 @@
       "status": 1
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Nina Owens",
       "email": "nina@example.com",
       "phone": "5553697410",
@@ -203,7 +203,7 @@
       "status": 2
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Oscar Perry",
       "email": "oscar@example.com",
       "phone": "5558529630",
@@ -211,7 +211,7 @@
       "status": 1
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Paula Quinn",
       "email": "paula@example.com",
       "phone": "5557412580",
@@ -219,7 +219,7 @@
       "status": 2
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Quincy Reed",
       "email": "quincy@example.com",
       "phone": "5559638520",
@@ -227,7 +227,7 @@
       "status": 1
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Rachel Stone",
       "email": "rachel@example.com",
       "phone": "5552587410",
@@ -235,7 +235,7 @@
       "status": 1
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Sam Taylor",
       "email": "sam@example.com",
       "phone": "5551479630",
@@ -243,7 +243,7 @@
       "status": 2
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Tina Underwood",
       "email": "tina@example.com",
       "phone": "5553698520",
@@ -251,7 +251,7 @@
       "status": 1
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Uma Vance",
       "email": "uma@example.com",
       "phone": "5558527410",
@@ -259,7 +259,7 @@
       "status": 2
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Victor Ward",
       "email": "victor@example.com",
       "phone": "5559632580",
@@ -267,7 +267,7 @@
       "status": 1
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Wendy Xavier",
       "email": "wendy@example.com",
       "phone": "5557413690",
@@ -275,7 +275,7 @@
       "status": 1
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Xander Young",
       "email": "xander@example.com",
       "phone": "5552589630",
@@ -283,7 +283,7 @@
       "status": 2
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Yara Zane",
       "email": "yara@example.com",
       "phone": "5551477410",
@@ -291,7 +291,7 @@
       "status": 1
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Zack Adams",
       "email": "zack@example.com",
       "phone": "5553699630",
@@ -299,29 +299,40 @@
       "status": 2
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Amy Bell",
       "email": "amy@example.com",
       "phone": "5558523690",
       "birthdate": "1991-07-14",
       "status": 1
+    },
+    {
+      "id": "8467",
+      "name": "Ayush",
+      "email": "ayush@gmail.com",
+      "password": "Test@123",
+      "phone": "1234567890",
+      "birthdate": "1994-02-04",
+      "province": "1",
+      "gender": "1",
+      "status": 2
     }
   ],
   "genders": [
     {
-      "id": 1,
+      "id": "1",
       "gender": "male",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "gender": "female",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "gender": "other",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
@@ -329,14 +340,14 @@
   ],
   "provinces": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Province A",
       "description": "Description for Province A",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Province B",
       "description": "Description for Province B",
       "created_at": "2023-10-01T10:00:00Z",
@@ -345,13 +356,13 @@
   ],
   "statuses": [
     {
-      "id": 1,
+      "id": "1",
       "status": "active",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "status": "inactive",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
@@ -359,21 +370,21 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Electronics",
       "description": "Devices and gadgets",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Clothing",
       "description": "Apparel and accessories",
       "created_at": "2023-10-02T12:30:00Z",
       "updated_at": "2023-10-02T12:30:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Books",
       "description": "Fiction and non-fiction",
       "created_at": "2023-10-03T15:45:00Z",
@@ -450,21 +461,21 @@
   ],
   "userList": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@example.com",
       "phone": "1234567890",
       "birthdate": "1990-05-15"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Smith",
       "email": "jane@example.com",
       "phone": "9876543210",
       "birthdate": "1985-08-25"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Alice Johnson",
       "email": "alice@example.com",
       "phone": "5555555555",

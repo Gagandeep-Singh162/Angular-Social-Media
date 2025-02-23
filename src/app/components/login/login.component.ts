@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 // import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 // import { SessionService } from '../../services/shared/session.service';
 import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -18,19 +17,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { SessionService } from '../../services/session.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslateModule],
   // providers: [UsersService, userService],
 })
 export class LoginComponent {
@@ -164,30 +158,24 @@ export class LoginComponent {
 
   login(event: Event, email: string, password: string): void {
     event.preventDefault();
-    this.router.navigate(['/home']);
-    // this.userService.login(email, password).subscribe(
-    //   response => {
-    //     Swal.fire({
-    //       icon: 'success',
-    //       title: 'Login successful!',
-    //       text: response.message,
-    //     });
-    //     this.userService.getUserByEmail(email).subscribe(
-    //       userData => {
-    //         this.sessionService.setUser(userData);
-    //       },
-    //       error => console.error('Error getting user:', error)
-    //     );
-    //   },
-    //   error => {
-    //     Swal.fire({
-    //       icon: 'error',
-    //       title: 'Login error',
-    //       text: 'Please check your credentials.',
-    //     });
-    //     console.error('Login error:', error);
-    //   }
-    // );
+    this.userService.login(email, password).subscribe(
+      (response) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Login successful!',
+          text: response.message,
+        });
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Login error',
+          text: 'Please check your credentials.',
+        });
+        console.error('Login error:', error);
+      }
+    );
   }
 
   togglePasswordVisibility(): void {
@@ -198,51 +186,40 @@ export class LoginComponent {
     this.showLoginPassword = !this.showLoginPassword;
   }
 
-  // onRegisterFormSubmit(event: Event): void {
-  //   event.preventDefault();
-  //   if (this.registerForm.valid) {
-  //     const user = this.registerForm.value;
-  //     this.userService.getVerifyExitsUser(user.email).subscribe(
-  //       (response) => {
-  //         if (response.message === 'User exists') {
-  //           Swal.fire({
-  //             icon: 'error',
-  //             title: 'Registration error',
-  //             text: 'The email is already registered.',
-  //           });
-  //         }
-  //       },
-  //       (error) => {
-  //         if (error.status === 404) {
-  //           this.userService.createUser(user).subscribe(
-  //             (response) => {
-  //               Swal.fire({
-  //                 icon: 'success',
-  //                 title: 'Registration successful!',
-  //                 text: response.message,
-  //               });
-  //               this.showSignIn();
-  //               this.registerForm.reset();
-  //             },
-  //             (registrationError) => {
-  //               Swal.fire({
-  //                 icon: 'error',
-  //                 title: 'Registration error',
-  //                 text: 'Please try again.',
-  //               });
-  //               console.error('Error:', registrationError);
-  //             }
-  //           );
-  //         } else {
-  //           Swal.fire({
-  //             icon: 'error',
-  //             title: 'Verification error',
-  //             text: 'There was an error verifying the email. Please try again.',
-  //           });
-  //           console.error('Error:', error);
-  //         }
-  //       }
-  //     );
-  //   }
-  // }
+  onRegisterFormSubmit(event: Event): void {
+    event.preventDefault();
+    if (this.registerForm.valid) {
+      const user = this.registerForm.value;
+
+      this.userService.getVerifyExitsUser(user.email).subscribe((response) => {
+        if (response.length > 0) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Registration error',
+            text: 'The email is already registered.',
+          });
+        } else {
+          this.userService.createUser(user).subscribe(
+            (response) => {
+              Swal.fire({
+                icon: 'success',
+                title: 'Registration successful!',
+                text: response.message,
+              });
+              this.showSignIn();
+              this.registerForm.reset();
+            },
+            (registrationError) => {
+              Swal.fire({
+                icon: 'error',
+                title: 'Registration error',
+                text: 'Please try again.',
+              });
+              console.error('Error:', registrationError);
+            }
+          );
+        }
+      });
+    }
+  }
 }

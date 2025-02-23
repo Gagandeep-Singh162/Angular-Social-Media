@@ -1,24 +1,32 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { environment } from '../../environment/environment';
+
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  birthdate: string;
+  status: number;
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-    private apiUrl = 'http://localhost:8080/users/';
-    private genderUrl = 'http://localhost:8080/genders/';
-    private provinceUrl = 'http://localhost:8080/provinces/';
+  private url = environment.apiUrl;
+  private apiUrl = `${this.url}users`;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   getAllGenders(): Observable<any[]> {
-    return this.http.get<any[]>(this.genderUrl);
+    return this.http.get<any[]>(`${this.url}genders`);
   }
 
   getAllProvinces(): Observable<any[]> {
-    return this.http.get<any[]>(this.provinceUrl);
+    return this.http.get<any[]>(`${this.url}provinces`);
   }
 
   getUsers(): Observable<any> {
@@ -26,12 +34,26 @@ export class UserService {
   }
 
   login(email: string, password: string): Observable<any> {
-    const loginUrl = `${this.apiUrl}verify_login/`;
-    const body = { email, password };
-    return this.http.post<any>(loginUrl, body);
+    debugger;
+    const loginUrl = `${this.url}users`;
+    return this.http.get<any>(loginUrl).pipe(
+      map((users) => {
+        // Filter the users that match the email and password
+        const user = users.find(
+          (user: any) => user.email === email && user.password === password
+        );
+        debugger;
+        if (user) {
+          return { ...user, password: undefined };
+        } else {
+          throw new Error('Invalid email or password');
+        }
+      })
+    );
   }
 
   createUser(userData: any): Observable<any> {
+    debugger;
     return this.http.post<any>(this.apiUrl, userData);
   }
 
@@ -41,15 +63,22 @@ export class UserService {
     return this.http.get<any>(url, { params });
   }
 
-
   getUserById(userId: number): Observable<any> {
     const url = `${this.apiUrl}${userId}/`;
     return this.http.get<any>(url);
   }
 
   getVerifyExitsUser(email: string): Observable<any> {
-    const url = `${this.apiUrl}verify_exist/`;
-    const body = { email };
-    return this.http.post<any>(url, body);
+    const encodedEmail = encodeURIComponent(email);
+    const url = `${this.url}users?email=${encodedEmail}`;
+    return this.http.get<any>(url);
+  }
+
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  addUser(user: Partial<User>): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
 }
