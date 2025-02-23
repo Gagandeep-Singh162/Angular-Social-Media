@@ -1,168 +1,135 @@
+.content-wrapper {
+  padding-top: 80px; /* Matches navbar height */
+}
+
+.card {
+  margin-bottom: 20px;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+.mat-card-content {
+  text-align: left;
+  color: var(--text-color);
+}
+
+.mat-card-title {
+  color: var(--text-color); /* Override Material default */
+}
+
+.image-container {
+  position: relative;
+  max-height: 16rem;
+  overflow: hidden;
+}
+
+mat-menu {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+button[mat-menu-item] {
+  color: var(--text-color);
+}
+
+button[mat-menu-item]:hover {
+  background-color: var(--input-background);
+}
+
+.expanded-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.expanded-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+}
+
+body.dark-mode .close-button {
+  color: var(--text-color); /* Ensures visibility in dark mode */
+}
+
+.liked {
+  color: red; /* Stays readable in both modes */
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+/* Utility classes reused from your CSS but aligned with global vars */
 .flex {
-    display: flex;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .w-40p {
-    width: 40%;
-  }
-  
-  .max-w-md {
-    max-width: 50rem;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .shadow-md {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  
-  .mt-5 {
-    margin-top: 1.25rem;
-  }
-  
-  .p-4 {
-    padding: 1rem;
-  }
-  
-  .p-6 {
-    padding: 1.5rem;
-  }
-  
-  .space-y-4 > :not(:last-child) {
-    margin-bottom: 1rem;
-  }
-  
-  .text-2xl {
-    font-size: 1.5rem;
-  }
-  
-  .font-bold {
-    font-weight: bold;
-  }
-  
-  .text-muted-foreground {
-    color: #6b7280;
-  }
-  
-  .items-center {
-    align-items: center;
-  }
-  
-  .text-sm {
-    font-size: 0.875rem;
-  }
-  
-  .gap-4 {
-    gap: 1rem;
-  }
-  
-  .mr-2 {
-    margin-right: 0.5rem;
-  }
-  
-  .ml-2 {
-    margin-left: 0.5rem;
-  }
-  
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-  
-  .object-cover {
-    object-fit: cover;
-  }
-  
-  .w-full {
-    width: 100%;
-  }
-  
-  .h-64 {
-    height: 16rem;
-  }
-  
-  .card {
-    margin-bottom: 20px; /* Espacio entre las tarjetas */
-  }
-  
-  .mat-card-content {
-    text-align: left; /* Alinea el contenido del card a la izquierda */
-  }
-  
-  .image-container {
-    position: relative;
-    max-height: 16rem; /* Altura máxima de la imagen */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el contenedor */
-  }
-  
-  .expanded-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Asegura que la imagen ampliada esté sobre otros elementos */
-  }
-  
-  .expanded-image img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain; /* Ajusta la imagen manteniendo la relación de aspecto */
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: white;
-  }
-  
-  /* Form Styles */
-  .label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-    box-sizing: border-box;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
-  .liked {
-    color: red;
-  }
-  
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.space-y-4 > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.w-full {
+  width: 100%;
+}

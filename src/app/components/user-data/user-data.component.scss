@@ -1,21 +1,75 @@
 .search-container {
   margin: 16px;
-  width: calc(100% - 32px); // Accounts for the margins
+  width: calc(100% - 32px);
+}
 
-  mat-form-field {
-    width: 100%;
-    display: block;
-  }
+.search-container mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+/* Base input styles */
+.search-container .mat-form-field .mat-input-element {
+  color: var(--text-color); /* #333333 in light mode */
+}
+
+/* Dark mode override with higher specificity and !important */
+body.dark-mode .search-container .mat-form-field .mat-input-element {
+  color: #ffffff !important; /* Force white in dark mode */
+}
+
+/* Label and placeholder */
+.search-container .mat-form-field .mat-form-field-label {
+  color: var(--muted-foreground);
+}
+
+.search-container .mat-form-field .mat-hint,
+.search-container .mat-form-field .mat-placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Dark mode label and placeholder */
+body.dark-mode .search-container .mat-form-field .mat-form-field-label,
+body.dark-mode .search-container .mat-form-field .mat-hint,
+body.dark-mode .search-container .mat-form-field .mat-placeholder {
+  color: #b0b8c4 !important; /* Lighter gray for visibility */
+}
+
+/* Input background and border */
+.search-container .mat-form-field .mat-form-field-flex {
+  background-color: var(--input-background);
+  border-color: var(--input-border);
+}
+
+.search-container .mat-form-field .mat-form-field-outline {
+  color: var(--input-border);
+}
+
+.search-container .mat-form-field .mat-form-field-outline-thick {
+  color: var(--accent-color); /* Focused state */
 }
 
 .table-container {
   margin: 16px;
+}
 
-  table {
-    width: 100%;
-  }
+.table-container table {
+  width: 100%;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
 
-  button[mat-raised-button] {
-    margin-top: 16px;
-  }
+.table-container th,
+.table-container td {
+  color: var(--text-color);
+}
+
+.table-container button[mat-raised-button] {
+  margin-top: 16px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.mat-elevation-z8 {
+  box-shadow: var(--shadow);
 }

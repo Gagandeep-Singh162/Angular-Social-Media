@@ -1,125 +1,131 @@
-<div class="card w-1/2 mx-auto mt-5">
-  <div class="card-header flex justify-between items-center">
-    <div>
-      <h2 class="card-title">{{ "publish.title" | translate }}</h2>
-      <p class="card-description">{{ "publish.description" | translate }}</p>
+<div class="content-wrapper">
+  <div class="card w-1/2 mx-auto mt-5">
+    <div class="card-header flex justify-between items-center">
+      <div>
+        <h2 class="card-title">{{ "publish.title" | translate }}</h2>
+        <p class="card-description">{{ "publish.description" | translate }}</p>
+      </div>
     </div>
-  </div>
-  <div class="card-content">
-    <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
-      <div class="grid gap-4">
-        <div class="grid gap-2">
-          <label for="title">{{
-            "publish.form.title_label" | translate
-          }}</label>
-          <input
-            id="title"
-            placeholder="{{ 'publish.form.title_placeholder' | translate }}"
-            [(ngModel)]="post.title"
-            name="title"
-            class="input"
-            required
-          />
-          <div
-            *ngIf="postForm.submitted && !postForm.controls['title']?.valid"
-            class="small-error"
-          >
-            <small>{{ "publish.form.title_required" | translate }}</small>
-          </div>
-          <label for="category">{{
-            "publish.form.category_label" | translate
-          }}</label>
-          <select
-            id="category"
-            name="category"
-            [(ngModel)]="post.category_id"
-            class="input"
-            required
-          >
-            <option *ngFor="let category of categories" [value]="category.id">
-              {{ category.name }}
-            </option>
-          </select>
-          <div
-            *ngIf="postForm.submitted && !postForm.controls['category']?.valid"
-            class="small-error"
-          >
-            <small>{{ "publish.form.category_required" | translate }}</small>
-          </div>
-        </div>
-        <div class="grid gap-2">
-          <label for="description">{{
-            "publish.form.description_label" | translate
-          }}</label>
-          <textarea
-            id="description"
-            placeholder="{{
-              'publish.form.description_placeholder' | translate
-            }}"
-            [(ngModel)]="post.content"
-            name="description"
-            class="textarea min-h-[100px]"
-            required
-          ></textarea>
-          <div
-            *ngIf="
-              postForm.submitted && !postForm.controls['description']?.valid
-            "
-            class="small-error"
-          >
-            <small>{{ "publish.form.description_required" | translate }}</small>
-          </div>
-        </div>
-        <div class="grid gap-2">
-          <label>{{ "publish.form.image_label" | translate }}</label>
-          <div class="image-container">
+    <div class="card-content">
+      <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+        <div class="grid gap-4">
+          <div class="grid gap-2">
+            <label for="title">{{
+              "publish.form.title_label" | translate
+            }}</label>
+            <input
+              id="title"
+              placeholder="{{ 'publish.form.title_placeholder' | translate }}"
+              [(ngModel)]="post.title"
+              name="title"
+              class="input"
+              required
+            />
             <div
-              *ngIf="!imagePreview"
-              class="flex flex-col items-center justify-center space-y-2 text-center border-2 border-dashed rounded-md border-primary-foreground"
-              (drop)="onDrop($event)"
-              (dragover)="onDragOver($event)"
-              (click)="fileInput.click()"
+              *ngIf="postForm.submitted && !postForm.controls['title']?.valid"
+              class="small-error"
             >
-              <i class="fas fa-image fa-2x text-primary-foreground"></i>
-              <p class="text-sm text-muted-foreground">
-                {{ "publish.form.image_placeholder" | translate }}
-              </p>
-              <input
-                type="file"
-                (change)="onFileSelected($event)"
-                hidden
-                #fileInput
-              />
+              <small>{{ "publish.form.title_required" | translate }}</small>
             </div>
-            <div *ngIf="imagePreview" class="image-preview">
-              <img
-                [src]="imagePreview"
-                alt="{{ 'publish.form.image_alt' | translate }}"
-                class="image-content"
-              />
-              <div class="delete-button" (click)="clearImagePreview()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
+            <label for="category">{{
+              "publish.form.category_label" | translate
+            }}</label>
+            <select
+              id="category"
+              name="category"
+              [(ngModel)]="post.category_id"
+              class="input"
+              required
+            >
+              <option *ngFor="let category of categories" [value]="category.id">
+                {{ category.name }}
+              </option>
+            </select>
+            <div
+              *ngIf="
+                postForm.submitted && !postForm.controls['category']?.valid
+              "
+              class="small-error"
+            >
+              <small>{{ "publish.form.category_required" | translate }}</small>
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label for="description">{{
+              "publish.form.description_label" | translate
+            }}</label>
+            <textarea
+              id="description"
+              placeholder="{{
+                'publish.form.description_placeholder' | translate
+              }}"
+              [(ngModel)]="post.content"
+              name="description"
+              class="textarea min-h-[100px]"
+              required
+            ></textarea>
+            <div
+              *ngIf="
+                postForm.submitted && !postForm.controls['description']?.valid
+              "
+              class="small-error"
+            >
+              <small>{{
+                "publish.form.description_required" | translate
+              }}</small>
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label>{{ "publish.form.image_label" | translate }}</label>
+            <div class="image-container">
+              <div
+                *ngIf="!imagePreview"
+                class="flex flex-col items-center justify-center space-y-2 text-center border-2 border-dashed rounded-md border-muted-foreground"
+                (drop)="onDrop($event)"
+                (dragover)="onDragOver($event)"
+                (click)="fileInput.click()"
+              >
+                <i class="fas fa-image fa-2x text-muted-foreground"></i>
+                <p class="text-sm text-muted-foreground">
+                  {{ "publish.form.image_placeholder" | translate }}
+                </p>
+                <input
+                  type="file"
+                  (change)="onFileSelected($event)"
+                  hidden
+                  #fileInput
+                />
+              </div>
+              <div *ngIf="imagePreview" class="image-preview">
+                <img
+                  [src]="imagePreview"
+                  alt="{{ 'publish.form.image_alt' | translate }}"
+                  class="image-content"
+                />
+                <div class="delete-button" (click)="clearImagePreview()">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-footer flex justify-end gap-2">
-        <button type="button" class="button-outline" (click)="onCancel()">
-          <i class="fa fa-times"></i>
-        </button>
-        <button
-          type="submit"
-          class="button"
-          [disabled]="postForm.invalid"
-          [ngClass]="{ disabled: postForm.invalid }"
-        >
-          <i class="fa fa-paper-plane"></i>
-        </button>
-      </div>
-    </form>
+        <div class="card-footer flex justify-end gap-2">
+          <button type="button" class="button-outline" (click)="onCancel()">
+            <i class="fa fa-times"></i>
+          </button>
+          <button
+            type="submit"
+            class="button"
+            [disabled]="postForm.invalid"
+            [ngClass]="{ disabled: postForm.invalid }"
+          >
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

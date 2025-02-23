@@ -1,91 +1,99 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-      <div *ngFor="let post of posts" class="d-flex justify-content-center">
-        <mat-card
-          class="max-w-md rounded-lg shadow-md overflow-hidden mt-5 card justify-center"
-        >
-          <div class="relative p-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="flex items-center text-sm text-muted-foreground">
-                <mat-icon class="mr-2">person</mat-icon>
-                <span>{{ post.username || ('card.unknown_user' | translate) }}</span>
-                <span class="ml-2 text-muted-foreground">
-                  {{ post.time_created | date : "medium" }}
-                </span>
-              </div>
-              <div class="flex items-center gap-2 ml-auto">
-                <button mat-icon-button [matMenuTriggerFor]="menu">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="confirmDelete(post.id)">
-                    <mat-icon>delete</mat-icon>
-                    <span>{{ 'card.delete' | translate }}</span>
-                  </button>
-                </mat-menu>
-              </div>
-            </div>
-          </div>
-          <mat-card-content
-            class="p-6 space-y-4"
-            *ngIf="!editingPost || editingPost.id !== post.id"
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div *ngFor="let post of posts" class="d-flex justify-content-center">
+          <mat-card
+            class="max-w-md rounded-lg shadow-md overflow-hidden mt-5 card justify-center"
           >
-            <mat-card-title class="text-2xl font-bold">{{
-              post.title
-            }}</mat-card-title>
-            <p class="text-muted-foreground">
-              {{ post.content }}
-              <span class="text-primary"
-                >#{{ post.category || ('card.uncategorized' | translate) }}</span
-              >
-            </p>
-            <div class="image-container" *ngIf="post.image">
-              <div *ngIf="!post.isImageExpanded">
-                <img
-                  [src]="post.image || 'https://via.placeholder.com/150'"
-                  [alt]="'card.blog_post_image' | translate"
-                  class="object-cover w-full h-full"
-                  (click)="expandImage(post)"
-                />
+            <div class="relative p-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="flex items-center text-sm text-muted-foreground">
+                  <mat-icon class="mr-2">person</mat-icon>
+                  <span>{{
+                    post.username || ("card.unknown_user" | translate)
+                  }}</span>
+                  <span class="ml-2 text-muted-foreground">
+                    {{ post.time_created | date : "medium" }}
+                  </span>
+                </div>
+                <div class="flex items-center gap-2 ml-auto">
+                  <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="confirmDelete(post.id)">
+                      <mat-icon>delete</mat-icon>
+                      <span>{{ "card.delete" | translate }}</span>
+                    </button>
+                  </mat-menu>
+                </div>
               </div>
-              <div *ngIf="post.isImageExpanded" class="expanded-image">
-                <img
-                  [src]="post.image || 'https://via.placeholder.com/150'"
-                  [alt]="'card.blog_post_image' | translate"
-                  class="object-cover w-full h-full"
-                />
-                <button
-                  mat-icon-button
-                  class="close-button"
-                  (click)="closeImage(post)"
+            </div>
+            <mat-card-content
+              class="p-6 space-y-4"
+              *ngIf="!editingPost || editingPost.id !== post.id"
+            >
+              <mat-card-title class="text-2xl font-bold">{{
+                post.title
+              }}</mat-card-title>
+              <p class="text-muted-foreground">
+                {{ post.content }}
+                <span class="text-primary"
+                  >#{{
+                    post.category || ("card.uncategorized" | translate)
+                  }}</span
                 >
-                  <mat-icon>close</mat-icon>
-                </button>
+              </p>
+              <div class="image-container" *ngIf="post.image">
+                <div *ngIf="!post.isImageExpanded">
+                  <img
+                    [src]="post.image || 'https://via.placeholder.com/150'"
+                    [alt]="'card.blog_post_image' | translate"
+                    class="object-cover w-full h-full"
+                    (click)="expandImage(post)"
+                  />
+                </div>
+                <div *ngIf="post.isImageExpanded" class="expanded-image">
+                  <img
+                    [src]="post.image || 'https://via.placeholder.com/150'"
+                    [alt]="'card.blog_post_image' | translate"
+                    class="object-cover w-full h-full"
+                  />
+                  <button
+                    mat-icon-button
+                    class="close-button"
+                    (click)="closeImage(post)"
+                  >
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <button mat-icon-button (click)="toggleLike(post)">
-                <mat-icon [ngClass]="{ liked: post.userLiked }">
-                  {{ post.userLiked ? "favorite" : "favorite_border" }}
-                </mat-icon>
-              </button>
-              <span>{{ post.num_likes || 0 }}</span>
-              <div class="flex items-center">
-                <button mat-icon-button (click)="toggleComments(post.id)">
-                  <mat-icon>comment</mat-icon>
+              <div class="flex items-center gap-4">
+                <button mat-icon-button (click)="toggleLike(post)">
+                  <mat-icon [ngClass]="{ liked: post.userLiked }">
+                    {{ post.userLiked ? "favorite" : "favorite_border" }}
+                  </mat-icon>
                 </button>
-                <span>{{ post.num_comments || 0 }}</span>
+                <span>{{ post.num_likes || 0 }}</span>
+                <div class="flex items-center">
+                  <button mat-icon-button (click)="toggleComments(post.id)">
+                    <mat-icon>comment</mat-icon>
+                  </button>
+                  <span>{{ post.num_comments || 0 }}</span>
+                </div>
               </div>
-            </div>
-            <div *ngIf="expandedPostId === post.id">
-              <app-comments
-                [postId]="post.id"
-                (commentAdded)="updateCommentCount(post, post.num_comments + 1)"
-              ></app-comments>
-            </div>
-          </mat-card-content>
-        </mat-card>
+              <div *ngIf="expandedPostId === post.id">
+                <app-comments
+                  [postId]="post.id"
+                  (commentAdded)="
+                    updateCommentCount(post, post.num_comments + 1)
+                  "
+                ></app-comments>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>

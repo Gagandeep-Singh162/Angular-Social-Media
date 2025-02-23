@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,16 +15,23 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
   user: any;
+  themeText: string = 'Switch to Dark Mode';
+  isDarkMode: boolean = false;
 
   constructor(
     private sessionService: SessionService,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit(): void {
     this.user = this.sessionService.getUser();
     console.log('User in navbar:', this.user);
+
+    this.themeService.isDarkMode$.subscribe((isDark) => {
+      this.isDarkMode = isDark;
+    });
   }
 
   clearSession(): void {
@@ -36,6 +44,17 @@ export class NavbarComponent implements OnInit {
   switchLanguage(language: string | null) {
     if (language !== null) {
       this.translate.use(language);
+    }
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  scrollToUserData() {
+    const element = document.getElementById('user-data-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

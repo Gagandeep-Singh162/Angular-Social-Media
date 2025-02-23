@@ -15,7 +15,7 @@ export interface User {
   providedIn: 'root',
 })
 export class UserDataService {
-  private apiUrl = 'http://localhost:3000/users'; // JSON Server URL
+  private apiUrl = 'http://localhost:8080/users'; // JSON Server URL
 
   constructor(private http: HttpClient) {}
 
