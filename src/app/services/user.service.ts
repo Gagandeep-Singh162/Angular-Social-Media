@@ -34,7 +34,6 @@ export class UserService {
   }
 
   login(email: string, password: string): Observable<any> {
-    debugger;
     const loginUrl = `${this.url}users`;
     return this.http.get<any>(loginUrl).pipe(
       map((users) => {
@@ -42,8 +41,10 @@ export class UserService {
         const user = users.find(
           (user: any) => user.email === email && user.password === password
         );
-        debugger;
         if (user) {
+          localStorage.setItem('id', user.id);
+          localStorage.setItem('name', user.name);
+          localStorage.setItem('email', user.email);
           return { ...user, password: undefined };
         } else {
           throw new Error('Invalid email or password');
@@ -53,7 +54,6 @@ export class UserService {
   }
 
   createUser(userData: any): Observable<any> {
-    debugger;
     return this.http.post<any>(this.apiUrl, userData);
   }
 

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from '../../services/category.service';
 import { NewPostService } from '../../services/new-post.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { Post } from '../../Models/PostModels';
 
 @Component({
   selector: 'app-post',
@@ -77,18 +78,22 @@ export class PostComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
+    debugger;
     if (form.invalid) {
       return;
     }
-    const formData = new FormData();
-    formData.append('title', this.post.title);
-    formData.append('content', this.post.content);
-    formData.append('user_id', this.post.user_id.toString());
-    formData.append('category_id', this.post.category_id.toString());
-    if (this.post.image) {
-      formData.append('image', this.post.image);
-    }
-    this.postService.createPost(formData).subscribe(
+    const postObj: Partial<Post> = {
+      title: this.post.title,
+      content: this.post.content,
+      user_id: Number(localStorage.getItem('id')) || 0,
+      category_id: this.post.category_id,
+      image: typeof this.post.image === "string" ? this.post.image : null,
+      created_at: new Date().toLocaleDateString(),
+      updated_at: new Date().toLocaleDateString(),
+      num_likes: 0,
+      num_comments: 0,
+    };
+    this.postService.createPost(postObj).subscribe(
       (response) => {
         console.log('Post created successfully', response);
         Swal.fire('Success!', 'The post was created successfully', 'success');

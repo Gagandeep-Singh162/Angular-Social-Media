@@ -14,7 +14,6 @@ import { ThemeService } from '../../services/theme.service';
   imports: [CommonModule],
 })
 export class NavbarComponent implements OnInit {
-  user: any;
   themeText: string = 'Switch to Dark Mode';
   isDarkMode: boolean = false;
 
@@ -26,19 +25,9 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.user = this.sessionService.getUser();
-    console.log('User in navbar:', this.user);
-
     this.themeService.isDarkMode$.subscribe((isDark) => {
       this.isDarkMode = isDark;
     });
-  }
-
-  clearSession(): void {
-    this.sessionService.clearUser();
-    console.log('Session cleared');
-    this.user = null;
-    this.router.navigate(['/login']);
   }
 
   switchLanguage(language: string | null) {
@@ -56,5 +45,10 @@ export class NavbarComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }

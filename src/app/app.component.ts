@@ -1,8 +1,5 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { LoginComponent } from './components/login/login.component';
 import { SessionService } from './services/session.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -11,13 +8,7 @@ import { ThemeService } from './services/theme.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    UserListComponent,
-    HttpClientModule,
-    LoginComponent,
-    TranslateModule,
-  ],
+  imports: [RouterOutlet, TranslateModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
