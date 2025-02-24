@@ -67,258 +67,6 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@example.com",
-      "password": "hashed_password_123",
-      "salt": "random_salt_123",
-      "phone": "1234567890",
-      "birthdate": "1990-05-15",
-      "province": 1,
-      "gender": 1,
-      "status": 1,
-      "created_at": "2023-10-01T10:00:00Z",
-      "updated_at": "2023-10-01T10:00:00Z"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "email": "jane@example.com",
-      "password": "hashed_password_456",
-      "salt": "random_salt_456",
-      "phone": "9876543210",
-      "birthdate": "1985-08-25",
-      "province": 2,
-      "gender": 2,
-      "status": 2,
-      "created_at": "2023-10-02T12:30:00Z",
-      "updated_at": "2023-10-02T12:30:00Z"
-    },
-    {
-      "id": "efdc",
-      "name": "New User",
-      "email": "newuser@example.com",
-      "phone": "1234567890",
-      "birthdate": "2000-01-01",
-      "status": 1
-    },
-    {
-      "id": "4",
-      "name": "Alice Johnson",
-      "email": "alice@example.com",
-      "phone": "5551234567",
-      "birthdate": "1992-03-10",
-      "status": 1
-    },
-    {
-      "id": "5",
-      "name": "Bob Brown",
-      "email": "bob@example.com",
-      "phone": "5559876543",
-      "birthdate": "1988-11-22",
-      "status": 2
-    },
-    {
-      "id": "6",
-      "name": "Charlie Davis",
-      "email": "charlie@example.com",
-      "phone": "5554567890",
-      "birthdate": "1995-07-30",
-      "status": 1
-    },
-    {
-      "id": "7",
-      "name": "Diana Evans",
-      "email": "diana@example.com",
-      "phone": "5553216547",
-      "birthdate": "1983-09-05",
-      "status": 2
-    },
-    {
-      "id": "8",
-      "name": "Evan Fox",
-      "email": "evan@example.com",
-      "phone": "5557891234",
-      "birthdate": "1998-12-15",
-      "status": 1
-    },
-    {
-      "id": "9",
-      "name": "Fiona Green",
-      "email": "fiona@example.com",
-      "phone": "5556549870",
-      "birthdate": "1991-04-18",
-      "status": 1
-    },
-    {
-      "id": "10",
-      "name": "George Hill",
-      "email": "george@example.com",
-      "phone": "5551472589",
-      "birthdate": "1987-06-25",
-      "status": 2
-    },
-    {
-      "id": "11",
-      "name": "Hannah Ivy",
-      "email": "hannah@example.com",
-      "phone": "5553692581",
-      "birthdate": "1993-02-14",
-      "status": 1
-    },
-    {
-      "id": "12",
-      "name": "Ian James",
-      "email": "ian@example.com",
-      "phone": "5558521470",
-      "birthdate": "1989-10-08",
-      "status": 2
-    },
-    {
-      "id": "13",
-      "name": "Julia King",
-      "email": "julia@example.com",
-      "phone": "5557419630",
-      "birthdate": "1996-08-20",
-      "status": 1
-    },
-    {
-      "id": "14",
-      "name": "Kevin Lee",
-      "email": "kevin@example.com",
-      "phone": "5552583690",
-      "birthdate": "1984-12-01",
-      "status": 2
-    },
-    {
-      "id": "15",
-      "name": "Laura Miller",
-      "email": "laura@example.com",
-      "phone": "5559631470",
-      "birthdate": "1997-03-27",
-      "status": 1
-    },
-    {
-      "id": "16",
-      "name": "Mike Nelson",
-      "email": "mike@example.com",
-      "phone": "5551478520",
-      "birthdate": "1990-09-12",
-      "status": 1
-    },
-    {
-      "id": "17",
-      "name": "Nina Owens",
-      "email": "nina@example.com",
-      "phone": "5553697410",
-      "birthdate": "1986-05-03",
-      "status": 2
-    },
-    {
-      "id": "18",
-      "name": "Oscar Perry",
-      "email": "oscar@example.com",
-      "phone": "5558529630",
-      "birthdate": "1994-01-19",
-      "status": 1
-    },
-    {
-      "id": "19",
-      "name": "Paula Quinn",
-      "email": "paula@example.com",
-      "phone": "5557412580",
-      "birthdate": "1982-07-07",
-      "status": 2
-    },
-    {
-      "id": "20",
-      "name": "Quincy Reed",
-      "email": "quincy@example.com",
-      "phone": "5559638520",
-      "birthdate": "1999-11-30",
-      "status": 1
-    },
-    {
-      "id": "21",
-      "name": "Rachel Stone",
-      "email": "rachel@example.com",
-      "phone": "5552587410",
-      "birthdate": "1988-04-22",
-      "status": 1
-    },
-    {
-      "id": "22",
-      "name": "Sam Taylor",
-      "email": "sam@example.com",
-      "phone": "5551479630",
-      "birthdate": "1993-06-15",
-      "status": 2
-    },
-    {
-      "id": "23",
-      "name": "Tina Underwood",
-      "email": "tina@example.com",
-      "phone": "5553698520",
-      "birthdate": "1987-02-28",
-      "status": 1
-    },
-    {
-      "id": "24",
-      "name": "Uma Vance",
-      "email": "uma@example.com",
-      "phone": "5558527410",
-      "birthdate": "1995-10-10",
-      "status": 2
-    },
-    {
-      "id": "25",
-      "name": "Victor Ward",
-      "email": "victor@example.com",
-      "phone": "5559632580",
-      "birthdate": "1989-08-05",
-      "status": 1
-    },
-    {
-      "id": "26",
-      "name": "Wendy Xavier",
-      "email": "wendy@example.com",
-      "phone": "5557413690",
-      "birthdate": "1992-12-20",
-      "status": 1
-    },
-    {
-      "id": "27",
-      "name": "Xander Young",
-      "email": "xander@example.com",
-      "phone": "5552589630",
-      "birthdate": "1986-03-17",
-      "status": 2
-    },
-    {
-      "id": "28",
-      "name": "Yara Zane",
-      "email": "yara@example.com",
-      "phone": "5551477410",
-      "birthdate": "1998-05-25",
-      "status": 1
-    },
-    {
-      "id": "29",
-      "name": "Zack Adams",
-      "email": "zack@example.com",
-      "phone": "5553699630",
-      "birthdate": "1984-09-09",
-      "status": 2
-    },
-    {
-      "id": "30",
-      "name": "Amy Bell",
-      "email": "amy@example.com",
-      "phone": "5558523690",
-      "birthdate": "1991-07-14",
-      "status": 1
-    },
-    {
       "id": "8467",
       "name": "Ayush",
       "email": "ayush@gmail.com",
@@ -327,7 +75,380 @@
       "birthdate": "1994-02-04",
       "province": "1",
       "gender": "1",
-      "status": 2
+      "status": 2,
+      "role": "admin"
+    },
+    {
+      "id": "66dd",
+      "name": "Gagandeep Singh",
+      "email": "gagan@gmail.com",
+      "password": "12345678",
+      "phone": "9560235316",
+      "birthdate": "2000-09-16",
+      "province": "2",
+      "gender": "1",
+      "status": 2,
+      "role": "admin"
+    },
+    {
+      "id": "1001",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@gmail.com",
+      "password": "P@ssw0rd",
+      "phone": "9876543210",
+      "birthdate": "1998-03-15",
+      "province": "1",
+      "gender": "2",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1002",
+      "name": "Rahul Patel",
+      "email": "rahul.patel@yahoo.com",
+      "password": "Rahul#2023",
+      "phone": "8765432109",
+      "birthdate": "1995-07-22",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1003",
+      "name": "Sneha Verma",
+      "email": "sneha.v@gmail.com",
+      "password": "Sneha$123",
+      "phone": "7654321098",
+      "birthdate": "2001-11-30",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1004",
+      "name": "Vikram Singh",
+      "email": "vikram.singh@outlook.com",
+      "password": "Vikram@99",
+      "phone": "6543210987",
+      "birthdate": "1993-05-12",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1005",
+      "name": "Anjali Gupta",
+      "email": "anjali.gupta@gmail.com",
+      "password": "Anjali#456",
+      "phone": "5432109876",
+      "birthdate": "1999-08-09",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1006",
+      "name": "Karan Mehra",
+      "email": "karan.mehra@gmail.com",
+      "password": "Karan2025",
+      "phone": "4321098765",
+      "birthdate": "1997-12-25",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1007",
+      "name": "Neha Kapoor",
+      "email": "neha.kapoor@yahoo.com",
+      "password": "Neha!789",
+      "phone": "3210987654",
+      "birthdate": "2002-01-17",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1008",
+      "name": "Arjun Reddy",
+      "email": "arjun.reddy@gmail.com",
+      "password": "Arjun@321",
+      "phone": "2109876543",
+      "birthdate": "1996-06-03",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1009",
+      "name": "Pooja Desai",
+      "email": "pooja.desai@outlook.com",
+      "password": "Pooja$654",
+      "phone": "1098765432",
+      "birthdate": "2000-04-28",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1010",
+      "name": "Rohit Nair",
+      "email": "rohit.nair@gmail.com",
+      "password": "Rohit#987",
+      "phone": "9988776655",
+      "birthdate": "1994-09-10",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1011",
+      "name": "Meena Kumari",
+      "email": "meena.kumari@yahoo.com",
+      "password": "Meena@111",
+      "phone": "8877665544",
+      "birthdate": "1998-10-19",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1012",
+      "name": "Suresh Yadav",
+      "email": "suresh.yadav@gmail.com",
+      "password": "Suresh2024",
+      "phone": "7766554433",
+      "birthdate": "1995-02-27",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1013",
+      "name": "Kavita Joshi",
+      "email": "kavita.joshi@outlook.com",
+      "password": "Kavita!222",
+      "phone": "6655443322",
+      "birthdate": "2001-07-14",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1014",
+      "name": "Amitabh Das",
+      "email": "amitabh.das@gmail.com",
+      "password": "Amitabh$333",
+      "phone": "5544332211",
+      "birthdate": "1993-03-08",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1015",
+      "name": "Divya Rana",
+      "email": "divya.rana@yahoo.com",
+      "password": "Divya@444",
+      "phone": "4433221100",
+      "birthdate": "1999-12-01",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1016",
+      "name": "Sanjay Kumar",
+      "email": "sanjay.kumar@gmail.com",
+      "password": "Sanjay#555",
+      "phone": "3322110099",
+      "birthdate": "1997-05-23",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1017",
+      "name": "Ritu Malhotra",
+      "email": "ritu.malhotra@outlook.com",
+      "password": "Ritu!666",
+      "phone": "2211009988",
+      "birthdate": "2000-08-07",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1018",
+      "name": "Vivek Chopra",
+      "email": "vivek.chopra@gmail.com",
+      "password": "Vivek@777",
+      "phone": "1100998877",
+      "birthdate": "1996-11-11",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1019",
+      "name": "Shalini Bose",
+      "email": "shalini.bose@yahoo.com",
+      "password": "Shalini$888",
+      "phone": "9988776655",
+      "birthdate": "2002-02-20",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1020",
+      "name": "Manish Tiwari",
+      "email": "manish.tiwari@gmail.com",
+      "password": "Manish#999",
+      "phone": "8877665544",
+      "birthdate": "1994-04-05",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1021",
+      "name": "Rekha Pillai",
+      "email": "rekha.pillai@outlook.com",
+      "password": "Rekha@000",
+      "phone": "7766554433",
+      "birthdate": "1998-06-29",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1022",
+      "name": "Deepak Jain",
+      "email": "deepak.jain@gmail.com",
+      "password": "Deepak!111",
+      "phone": "6655443322",
+      "birthdate": "1995-09-13",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1023",
+      "name": "Swati Arora",
+      "email": "swati.arora@yahoo.com",
+      "password": "Swati$222",
+      "phone": "5544332211",
+      "birthdate": "2001-10-26",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1024",
+      "name": "Nikhil Sethi",
+      "email": "nikhil.sethi@gmail.com",
+      "password": "Nikhil#333",
+      "phone": "4433221100",
+      "birthdate": "1993-07-18",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1025",
+      "name": "Tanvi Shetty",
+      "email": "tanvi.shetty@outlook.com",
+      "password": "Tanvi@444",
+      "phone": "3322110099",
+      "birthdate": "1999-01-31",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1026",
+      "name": "Yash Thakur",
+      "email": "yash.thakur@gmail.com",
+      "password": "Yash!555",
+      "phone": "2211009988",
+      "birthdate": "1997-03-24",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1027",
+      "name": "Lata Menon",
+      "email": "lata.menon@yahoo.com",
+      "password": "Lata$666",
+      "phone": "1100998877",
+      "birthdate": "2000-05-06",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1028",
+      "name": "Aditya Roy",
+      "email": "aditya.roy@gmail.com",
+      "password": "Aditya#777",
+      "phone": "9988776655",
+      "birthdate": "1996-08-15",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1029",
+      "name": "Simran Kaur",
+      "email": "simran.kaur@outlook.com",
+      "password": "Simran@888",
+      "phone": "8877665544",
+      "birthdate": "2002-11-08",
+      "province": "1",
+      "gender": "2",
+      "status": 2,
+      "role": "user"
+    },
+    {
+      "id": "1030",
+      "name": "Tarun Bhatt",
+      "email": "tarun.bhatt@gmail.com",
+      "password": "Tarun!999",
+      "phone": "7766554433",
+      "birthdate": "1994-12-22",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
     }
   ],
   "genders": [
