@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import { UsersService } from '../../services/flask/users.service';
-import { UserService } from '../../services/user.service';
+import { User, UserService } from '../../services/user.service';
 // import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 // import { SessionService } from '../../services/shared/session.service';
@@ -168,12 +168,17 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       },
       (error) => {
+        const errorMessage =
+          error?.error?.message ||
+          error?.message ||
+          'An unknown error occurred';
         Swal.fire({
           icon: 'error',
           title: 'Login error',
-          text: 'Please check your credentials.',
+          text: errorMessage.includes('User is inactive')
+            ? 'Your account has been locked or inactivated. Kindly check with Admin to re-active your account'
+            : 'Please check your credentials.',
         });
-        console.error('Login error:', error);
       }
     );
   }
@@ -190,6 +195,17 @@ export class LoginComponent {
     event.preventDefault();
     if (this.registerForm.valid) {
       const user = this.registerForm.value;
+      const userObj: Partial<User> = {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+        gender: user.gender,
+        province: user.province,
+        phone: user.phone,
+        role: 'user',
+        status: '1',
+        birthdate: user.birthdate,
+      };
 
       this.userService.getVerifyExitsUser(user.email).subscribe((response) => {
         if (response.length > 0) {
@@ -199,7 +215,7 @@ export class LoginComponent {
             text: 'The email is already registered.',
           });
         } else {
-          this.userService.createUser(user).subscribe(
+          this.userService.createUser(userObj).subscribe(
             (response) => {
               Swal.fire({
                 icon: 'success',

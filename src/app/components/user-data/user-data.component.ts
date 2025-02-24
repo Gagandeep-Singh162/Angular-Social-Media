@@ -92,7 +92,7 @@ export class UserDataComponent implements OnInit {
       email: 'newuser@example.com',
       phone: '1234567890',
       birthdate: '2000-01-01',
-      status: 1,
+      status: "1",
     };
     this.userService.addUser(newUser).subscribe((addedUser) => {
       this.dataSource.data = [...this.dataSource.data, addedUser];

@@ -42,7 +42,7 @@ export class PostService {
 
   // Delete a post by ID
   deletePost(postId: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${postId}`);
+    return this.http.delete<any>(`${this.apiUrl}${postId}`);
   }
 
   // Get posts by user ID

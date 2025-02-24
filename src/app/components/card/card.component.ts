@@ -209,9 +209,18 @@ export class CardComponent implements OnInit {
   }
 
   deletePost(postId: number): void {
-    this.posts = this.posts.filter((post) => post.id !== postId);
-    // this.savePosts();
-    Swal.fire('Deleted!', 'The post has been deleted.', 'success');
+    this.postService.deletePost(postId).subscribe({
+      next: (response) => {
+        Swal.fire('Deleted!', 'The post has been deleted.', 'success');
+      },
+      error: (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Post deletion error',
+          text: 'Please try again.',
+        });
+      },
+    });
   }
 
   toggleLike(post: any): void {
@@ -219,11 +228,11 @@ export class CardComponent implements OnInit {
     post.num_likes += post.userLiked ? 1 : -1;
     this.postService.updatePost(post.id, post).subscribe({
       next: (response) => {
-        console.log("Post updated successfully", response);
+        console.log('Post updated successfully', response);
       },
       error: (error) => {
-        console.error("Error updating post:", error);
-      }
+        console.error('Error updating post:', error);
+      },
     });
   }
 

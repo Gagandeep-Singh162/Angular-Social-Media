@@ -7,9 +7,13 @@ export interface User {
   id: number;
   name: string;
   email: string;
+  password: string;
   phone: string;
   birthdate: string;
-  status: number;
+  status: string;
+  role: string;
+  province: string;
+  gender: string;
 }
 
 @Injectable({
@@ -42,6 +46,9 @@ export class UserService {
           (user: any) => user.email === email && user.password === password
         );
         if (user) {
+          if (user.status !== 1) {
+            throw new Error('User is inactive');
+          }
           localStorage.setItem('id', user.id);
           localStorage.setItem('name', user.name);
           localStorage.setItem('email', user.email);
@@ -53,8 +60,8 @@ export class UserService {
     );
   }
 
-  createUser(userData: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, userData);
+  createUser(userData: Partial<User>): Observable<any> {
+    return this.http.post<User>(this.apiUrl, userData);
   }
 
   getUserByEmail(email: string): Observable<any> {
