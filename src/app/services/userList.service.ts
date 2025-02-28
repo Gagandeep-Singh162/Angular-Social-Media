@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
+import { environment } from '../../environment/environment';
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string;
@@ -14,16 +15,17 @@ export interface User {
   providedIn: 'root',
 })
 export class UserListService {
-  private apiUrl = 'http://localhost:8080/users';
+  private url = environment.apiUrl;
+  private apiUrl = `${this.url}users/`;
 
   constructor(private http: HttpClient) {}
 
-  getUserByID(userId: number): Observable<User> {
+  getUserByID(userId: string): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/getUserByID/${userId}`);
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/getUserAll`);
+    return this.http.get<User[]>(`${this.apiUrl}`);
   }
 
   private handleError(error: any) {

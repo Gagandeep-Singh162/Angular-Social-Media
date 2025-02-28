@@ -46,6 +46,7 @@ export class CardComponent implements OnInit {
   }
 
   toggleComments(postId: number): void {
+    debugger;
     this.expandedPostId = this.expandedPostId === postId ? null : postId;
   }
 
@@ -130,6 +131,7 @@ export class CardComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
   GetIcons(post: any) {
     return post.user_id.toString() === localStorage.getItem('id');
   }

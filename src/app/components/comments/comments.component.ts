@@ -11,6 +11,7 @@ import { UserListService, User } from '../../services/userList.service';
 import { SessionService } from '../../services/session.service';
 import { UserService } from '../../services/user.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-comments',
@@ -29,25 +30,27 @@ export class CommentsComponent implements OnInit {
   editingComment: Comment | null = null;
   editingResponse: CommentResponse | null = null;
   expandedCommentId: string | null = null;
-  userMap: { [key: number]: string } = {};
-  validUserIds: Set<number> = new Set();
+  userMap: { [key: string]: string } = {};
+  validUserIds: Set<string> = new Set();
   currentUser: any;
 
   constructor(
     private commentService: CommentService,
     private userService: UserListService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private postService: PostService
   ) {}
 
   ngOnInit() {
     this.loadAllUsers();
-    this.currentUser = this.sessionService.getUser();
+    this.currentUser = localStorage.getItem('id');
     this.loadComments();
   }
 
   loadComments() {
     this.commentService.getCommentsByPostId(this.postId).subscribe(
       (data: Comment[]) => {
+        debugger;
         this.comments = data;
         console.log('Comments loaded:', data);
 
@@ -107,7 +110,7 @@ export class CommentsComponent implements OnInit {
     if (this.newComment.trim() !== '') {
       const newComment: Comment = {
         postId: this.postId,
-        userId: this.currentUser.id,
+        userId: localStorage.getItem('id') || '',
         content: this.newComment,
         timeCreated: new Date().toISOString(),
         responses: [],
@@ -119,18 +122,38 @@ export class CommentsComponent implements OnInit {
           this.newComment = '';
           this.commentAdded.emit();
           console.log('Comment added:', comment);
+          this.afterAddComment(this.postId);
         },
         (error) => console.error('Error adding comment:', error)
       );
     }
   }
 
+  afterAddComment(post_id: any): void {
+    this.postService.getPostById(post_id).subscribe({
+      next: (postResponse) => {
+        postResponse.num_comments += 1;
+        this.postService.updatePost(postResponse.id, postResponse).subscribe({
+          next: (response) => {
+            console.log('Post updated successfully', response);
+          },
+          error: (error) => {
+            console.error('Error updating post:', error);
+          },
+        });
+      },
+      error: (error) => {
+        console.error('Error updating post:', error);
+      },
+    });
+  }
+
   handleAddReply(commentId: string) {
     const comment = this.comments.find((c) => c.id === commentId);
     if (comment && this.newReply.trim() !== '') {
-      const newReply: CommentResponse = {
+      const newReply: Partial<CommentResponse> = {
         commentId: commentId,
-        userId: this.currentUser.id,
+        userId: localStorage.getItem('id') || '',
         content: this.newReply,
         timeCreated: new Date().toISOString(),
       };
@@ -173,7 +196,7 @@ export class CommentsComponent implements OnInit {
     console.log('Expanding comment:', this.expandedCommentId);
   }
 
-  getUserName(userId: number): string {
+  getUserName(userId: string): string {
     return this.userMap[userId] || 'Unknown User';
   }
 

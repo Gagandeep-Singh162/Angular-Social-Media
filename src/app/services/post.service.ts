@@ -32,7 +32,7 @@ export class PostService {
 
   // Get a post by ID
   getPostById(postId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${postId}`);
+    return this.http.get<any>(`${this.apiUrl}${postId}`);
   }
 
   // Update a post by ID

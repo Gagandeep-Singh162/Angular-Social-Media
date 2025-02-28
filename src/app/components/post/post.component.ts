@@ -85,9 +85,9 @@ export class PostComponent implements OnInit {
     const postObj: Partial<Post> = {
       title: this.post.title,
       content: this.post.content,
-      user_id: Number(localStorage.getItem('id')) || 0,
+      user_id: localStorage.getItem('id') || '',
       category_id: this.post.category_id,
-      image: typeof this.post.image === "string" ? this.post.image : null,
+      image: typeof this.post.image === 'string' ? this.post.image : null,
       created_at: new Date().toLocaleDateString(),
       updated_at: new Date().toLocaleDateString(),
       num_likes: 0,

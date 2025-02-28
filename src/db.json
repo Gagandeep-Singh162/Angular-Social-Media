@@ -7,7 +7,7 @@
       "content": "This is the content of the first post.",
       "category_id": 1,
       "num_likes": 10,
-      "num_comments": 5,
+      "num_comments": 2,
       "time_created": "2023-10-01T10:00:00Z",
       "created_at": "2023-10-01T10:00:00Z",
       "updated_at": "2023-10-01T10:00:00Z",
@@ -33,20 +33,7 @@
       "content": "This is the content of the third post.",
       "category_id": 2,
       "num_likes": 3,
-      "num_comments": 2,
-      "time_created": "2023-10-02T12:30:00Z",
-      "created_at": "2023-10-02T12:30:00Z",
-      "updated_at": "2023-10-02T12:30:00Z",
-      "image": null
-    },
-    {
-      "id": "4",
-      "user_id": 2,
-      "title": "Fourth Post",
-      "content": "This is the content of the Fourth post.",
-      "category_id": 2,
-      "num_likes": 3,
-      "num_comments": 2,
+      "num_comments": 1,
       "time_created": "2023-10-02T12:30:00Z",
       "created_at": "2023-10-02T12:30:00Z",
       "updated_at": "2023-10-02T12:30:00Z",
@@ -63,9 +50,81 @@
       "updated_at": "2/24/2025",
       "num_likes": 0,
       "num_comments": 0
+    },
+    {
+      "id": "dd2d",
+      "title": "test",
+      "content": "teststs",
+      "user_id": 8467,
+      "category_id": "1",
+      "image": null,
+      "created_at": "2/28/2025",
+      "updated_at": "2/28/2025",
+      "num_likes": 0,
+      "num_comments": 1
+    },
+    {
+      "id": "66c6",
+      "title": "testimage",
+      "content": "testImage",
+      "user_id": 8467,
+      "category_id": "1",
+      "image": null,
+      "created_at": "2/28/2025",
+      "updated_at": "2/28/2025",
+      "num_likes": 0,
+      "num_comments": 1
     }
   ],
   "users": [
+    {
+      "id": "8467",
+      "name": "Ayush",
+      "email": "ayush@gmail.com",
+      "password": "Test@123",
+      "phone": "1234567890",
+      "birthdate": "1994-02-04",
+      "province": "1",
+      "gender": "1",
+      "status": 1,
+      "role": "admin"
+    },
+    {
+      "id": "66dd",
+      "name": "Gagandeep Singh",
+      "email": "gagan@gmail.com",
+      "password": "12345678",
+      "phone": "9560235316",
+      "birthdate": "2000-09-16",
+      "province": "2",
+      "gender": "1",
+      "status": 2,
+      "role": "admin"
+    },
+    {
+      "id": "1001",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@gmail.com",
+      "password": "P@ssw0rd",
+      "phone": "9876543210",
+      "birthdate": "1998-03-15",
+      "province": "1",
+      "gender": "2",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "1002",
+      "name": "Rahul Patel",
+      "email": "rahul.patel@yahoo.com",
+      "password": "Rahul#2023",
+      "phone": "8765432109",
+      "birthdate": "1995-07-22",
+      "province": "2",
+      "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
     {
       "id": "1003",
       "name": "Sneha Verma",
@@ -492,14 +551,14 @@
     {
       "id": "1",
       "postId": 1,
-      "userId": 1,
+      "userId": 1001,
       "content": "This is the first comment.",
       "timeCreated": "2023-10-01T10:00:00Z",
       "responses": [
         {
           "id": "1",
           "commentId": "1",
-          "userId": 2,
+          "userId": 1002,
           "content": "This is a response to the first comment.",
           "timeCreated": "2023-10-01T10:05:00Z"
         }
@@ -508,7 +567,7 @@
     {
       "id": "2",
       "postId": 1,
-      "userId": 3,
+      "userId": 1002,
       "content": "This is the second comment.",
       "timeCreated": "2023-10-01T10:10:00Z",
       "responses": []
@@ -516,16 +575,83 @@
     {
       "id": "3",
       "postId": 2,
-      "userId": 4,
+      "userId": 1004,
       "content": "This is a comment on another post.",
       "timeCreated": "2023-10-02T12:00:00Z",
       "responses": [
         {
           "id": "2",
           "commentId": "3",
-          "userId": 5,
+          "userId": 1005,
           "content": "This is a response to the third comment.",
           "timeCreated": "2023-10-02T12:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": "34d4",
+      "postId": "66c6",
+      "userId": "8467",
+      "content": "tttt",
+      "timeCreated": "2025-02-28T07:39:40.140Z",
+      "responses": []
+    },
+    {
+      "id": "006d",
+      "postId": "3",
+      "userId": "8467",
+      "content": "abc",
+      "timeCreated": "2025-02-28T07:58:26.400Z",
+      "responses": []
+    },
+    {
+      "id": "64cd",
+      "postId": "ce7a",
+      "userId": "8467",
+      "content": "getTest",
+      "timeCreated": "2025-02-28T07:58:49.463Z",
+      "responses": []
+    },
+    {
+      "id": "42e0",
+      "postId": "66c6",
+      "userId": "8467",
+      "content": "testGet",
+      "timeCreated": "2025-02-28T08:01:17.077Z",
+      "responses": []
+    },
+    {
+      "id": "571c",
+      "postId": "dd2d",
+      "userId": "8467",
+      "content": "abc",
+      "timeCreated": "2025-02-28T08:01:35.994Z",
+      "responses": []
+    },
+    {
+      "id": "4aa6",
+      "postId": "3",
+      "userId": "8467",
+      "content": "third functionality",
+      "timeCreated": "2025-02-28T08:02:18.228Z",
+      "responses": [
+        {
+          "commentId": "4aa6",
+          "userId": "8467",
+          "content": "this is response to third functionality",
+          "timeCreated": "2025-02-28T10:39:33.120Z"
+        },
+        {
+          "commentId": "4aa6",
+          "userId": "8467",
+          "content": "this is another response",
+          "timeCreated": "2025-02-28T10:40:27.804Z"
+        },
+        {
+          "commentId": "4aa6",
+          "userId": "8467",
+          "content": "test response",
+          "timeCreated": "2025-02-28T10:41:27.805Z"
         }
       ]
     }

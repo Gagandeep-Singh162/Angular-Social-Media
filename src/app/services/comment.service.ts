@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { environment } from '../../environment/environment';
 
 export interface CommentResponse {
-  id?: string; // Cambiar a opcional
+  id: string;
   commentId: string;
-  userId: number;
+  userId: string;
   content: string;
   timeCreated: string;
 }
@@ -14,7 +14,7 @@ export interface CommentResponse {
 export interface Comment {
   id?: string; // Cambiar a opcional
   postId: number;
-  userId: number;
+  userId: string;
   content: string;
   timeCreated: string;
   responses: CommentResponse[];
@@ -26,6 +26,7 @@ export interface Comment {
 export class CommentService {
   private url = environment.apiUrl;
   private apiUrl = `${this.url}comments/`;
+  comments: Comment[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -33,22 +34,22 @@ export class CommentService {
     return this.http.get<Comment[]>(`${this.apiUrl}`);
   }
 
-  addResponse(
-    commentId: string,
-    response: CommentResponse
-  ): Observable<Comment> {
-    return this.http.post<Comment>(
-      `${this.apiUrl}/${commentId}/response`,
-      response
+  // Add a new response to a comment
+  addResponse(commentId: string, newResponse: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}${commentId}`).pipe(
+      switchMap((comment) => {
+        comment.responses.push(newResponse);
+        return this.http.put(`${this.apiUrl}${commentId}`, comment);
+      })
     );
   }
 
   getCommentsByPostId(postId: number): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${this.apiUrl}/post/${postId}`);
+    return this.http.get<Comment[]>(`${this.apiUrl}?postId=${postId}`);
   }
 
   addComment(comment: Comment): Observable<Comment> {
-    return this.http.post<Comment>(`${this.apiUrl}/save`, comment);
+    return this.http.post<Comment>(`${this.apiUrl}`, comment);
   }
 
   deleteCommentsByPostId(postId: number): Observable<void> {
