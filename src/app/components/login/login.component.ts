@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 // import { UsersService } from '../../services/flask/users.service';
-import { UserService } from "../../services/user.service";
+import { User, UserService } from "../../services/user.service";
 // import Swal from 'sweetalert2';
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
@@ -199,7 +199,7 @@ export class LoginComponent {
         province: user.province,
         phone: user.phone,
         role: "user",
-        status: "1",
+        status: '1',
         birthdate: user.birthdate,
       };
 

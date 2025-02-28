@@ -12,7 +12,7 @@ export interface User {
   birthdate: string;
   province: string;
   gender: string;
-  status: number;
+  status: string;
   role: string;
 }
 
