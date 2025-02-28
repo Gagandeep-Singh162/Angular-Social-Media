@@ -67,6 +67,30 @@
   ],
   "users": [
     {
+      "id": "8467",
+      "name": "Ayush",
+      "email": "ayush@gmail.com",
+      "password": "Test@123",
+      "phone": "1234567890",
+      "birthdate": "1994-02-04",
+      "province": "1",
+      "gender": "1",
+      "status": 1,
+      "role": "admin"
+    },
+    {
+      "id": "66dd",
+      "name": "Gagandeep Singh",
+      "email": "gagan@gmail.com",
+      "password": "12345678",
+      "phone": "9560235316",
+      "birthdate": "2000-09-16",
+      "province": "2",
+      "gender": "1",
+      "status": 2,
+      "role": "admin"
+    },
+    {
       "id": "1003",
       "name": "Sneha Verma",
       "email": "sneha.v@gmail.com",
