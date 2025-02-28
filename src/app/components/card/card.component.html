@@ -17,6 +17,7 @@
                     {{ post.time_created | date : "medium" }}
                   </span>
                 </div>
+                @if (GetIcons(post)) {
                 <div class="flex items-center gap-2 ml-auto">
                   <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>more_vert</mat-icon>
@@ -28,6 +29,7 @@
                     </button>
                   </mat-menu>
                 </div>
+                }
               </div>
             </div>
             <mat-card-content
