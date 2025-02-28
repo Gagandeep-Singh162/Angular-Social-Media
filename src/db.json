@@ -67,54 +67,6 @@
   ],
   "users": [
     {
-      "id": "8467",
-      "name": "Ayush",
-      "email": "ayush@gmail.com",
-      "password": "Test@123",
-      "phone": "1234567890",
-      "birthdate": "1994-02-04",
-      "province": "1",
-      "gender": "1",
-      "status": 2,
-      "role": "admin"
-    },
-    {
-      "id": "66dd",
-      "name": "Gagandeep Singh",
-      "email": "gagan@gmail.com",
-      "password": "12345678",
-      "phone": "9560235316",
-      "birthdate": "2000-09-16",
-      "province": "2",
-      "gender": "1",
-      "status": 2,
-      "role": "admin"
-    },
-    {
-      "id": "1001",
-      "name": "Priya Sharma",
-      "email": "priya.sharma@gmail.com",
-      "password": "P@ssw0rd",
-      "phone": "9876543210",
-      "birthdate": "1998-03-15",
-      "province": "1",
-      "gender": "2",
-      "status": 1,
-      "role": "user"
-    },
-    {
-      "id": "1002",
-      "name": "Rahul Patel",
-      "email": "rahul.patel@yahoo.com",
-      "password": "Rahul#2023",
-      "phone": "8765432109",
-      "birthdate": "1995-07-22",
-      "province": "2",
-      "gender": "1",
-      "status": 1,
-      "role": "user"
-    },
-    {
       "id": "1003",
       "name": "Sneha Verma",
       "email": "sneha.v@gmail.com",
@@ -447,6 +399,18 @@
       "birthdate": "1994-12-22",
       "province": "2",
       "gender": "1",
+      "status": 1,
+      "role": "user"
+    },
+    {
+      "id": "e00c",
+      "name": "Test",
+      "email": "test@gmail.com",
+      "password": "1234567890",
+      "phone": "1234567890",
+      "birthdate": "2000-01-01",
+      "province": "1",
+      "gender": "2",
       "status": 1,
       "role": "user"
     }

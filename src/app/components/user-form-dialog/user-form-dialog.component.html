@@ -1,0 +1,59 @@
+<!-- user-form-dialog.component.html -->
+<mat-dialog-content>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <mat-label>{{ 'users.form.name' | translate }}</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.email' | translate }}</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.password' | translate }}</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.phone' | translate }}</mat-label>
+        <input matInput formControlName="phone">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.birthdate' | translate }}</mat-label>
+        <input matInput type="date" formControlName="birthdate">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.province' | translate }}</mat-label>
+        <mat-select formControlName="province">
+          <mat-option *ngFor="let province of provinces" [value]="province.id">
+            {{ province.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.gender' | translate }}</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option *ngFor="let gender of genders" [value]="gender.id">
+            {{ gender.gender }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.status' | translate }}</mat-label>
+        <mat-select formControlName="status">
+          <mat-option [value]="1">{{ 'users.table.status_active' | translate }}</mat-option>
+          <mat-option [value]="2">{{ 'users.table.status_inactive' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'users.form.role' | translate }}</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="user">{{ 'users.form.role_user' | translate }}</mat-option>
+          <mat-option value="admin">{{ 'users.form.role_admin' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCancel()">{{ 'users.form.cancel' | translate }}</button>
+    <button mat-button (click)="onSave()">{{ 'users.form.save' | translate }}</button>
+  </mat-dialog-actions>

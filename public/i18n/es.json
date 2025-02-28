@@ -63,6 +63,20 @@
       "english": "Inglés",
       "spanish": "Español",
       "hindi": "Hindi"
+    },
+    "login": {
+      "success_title": "¡Inicio de sesión exitoso!",
+      "success_text": "¡Bienvenido de nuevo!",
+      "error_title": "Error de inicio de sesión",
+      "error_text": "Por favor, verifica tus credenciales."
+    },
+    "register": {
+      "success_title": "¡Registro exitoso!",
+      "success_text": "Tu cuenta ha sido creada.",
+      "error_title": "Error de registro",
+      "error_text": "Por favor, intenta de nuevo.",
+      "email_exists_title": "El correo ya existe",
+      "email_exists_text": "El correo ya está registrado."
     }
   },
   "publish": {
@@ -95,7 +109,36 @@
       "status_inactive": "Inactivo",
       "actions": "Acciones"
     },
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "password": "Contraseña",
+      "phone": "Teléfono",
+      "birthdate": "Fecha de Nacimiento",
+      "province": "Provincia",
+      "gender": "Género",
+      "status": "Estado",
+      "role": "Rol",
+      "role_user": "Usuario",
+      "role_admin": "Administrador",
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    },
     "paginator_label": "Seleccionar página",
     "add_button": "Agregar Nuevo Usuario"
+  },
+  "delete_confirm": {
+    "title": "¿Estás seguro?",
+    "text": "¡No podrás revertir esto!",
+    "confirm_button": "¡Sí, bórralo!",
+    "cancel_button": "No, cancelar"
+  },
+  "delete_success": {
+    "title": "¡Eliminado!",
+    "text": "El usuario ha sido eliminado."
+  },
+  "delete_error": {
+    "title": "¡Error!",
+    "text": "Hubo un error al eliminar el usuario."
   }
 }

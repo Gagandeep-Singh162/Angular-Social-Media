@@ -65,7 +65,15 @@
         {{ "users.table.actions" | translate }}
       </th>
       <td mat-cell *matCellDef="let user">
-        <button mat-icon-button color="warn" (click)="deleteUser(user.id)">
+        <button mat-icon-button (click)="editUser(user)" edit-user>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleteUser(user.id)"
+          delete-user
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </td>
@@ -83,7 +91,7 @@
   >
   </mat-paginator>
 
-  <button mat-raised-button color="primary" (click)="addUser()">
+  <button mat-raised-button color="primary" (click)="openAddUserDialog()">
     {{ "users.add_button" | translate }}
   </button>
 </div>

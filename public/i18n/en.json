@@ -63,6 +63,20 @@
       "english": "English",
       "spanish": "Spanish",
       "hindi": "Hindi"
+    },
+    "login": {
+      "success_title": "Login Successful!",
+      "success_text": "Welcome back!",
+      "error_title": "Login Error",
+      "error_text": "Please check your credentials."
+    },
+    "register": {
+      "success_title": "Registration Successful!",
+      "success_text": "Your account has been created.",
+      "error_title": "Registration Error",
+      "error_text": "Please try again.",
+      "email_exists_title": "Email Already Exists",
+      "email_exists_text": "The email is already registered."
     }
   },
   "publish": {
@@ -95,7 +109,36 @@
       "status_inactive": "Inactive",
       "actions": "Actions"
     },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "phone": "Phone",
+      "birthdate": "Birthdate",
+      "province": "Province",
+      "gender": "Gender",
+      "status": "Status",
+      "role": "Role",
+      "role_user": "User",
+      "role_admin": "Admin",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
     "paginator_label": "Select page",
     "add_button": "Add New User"
+  },
+  "delete_confirm": {
+    "title": "Are you sure?",
+    "text": "You won't be able to revert this!",
+    "confirm_button": "Yes, delete it!",
+    "cancel_button": "No, cancel"
+  },
+  "delete_success": {
+    "title": "Deleted!",
+    "text": "The user has been deleted."
+  },
+  "delete_error": {
+    "title": "Error!",
+    "text": "There was an error deleting the user."
   }
 }

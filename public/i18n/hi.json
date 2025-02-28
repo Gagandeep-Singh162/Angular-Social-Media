@@ -63,6 +63,20 @@
       "english": "अंग्रेज़ी",
       "spanish": "स्पेनिश",
       "hindi": "हिन्दी"
+    },
+    "login": {
+      "success_title": "लॉगिन सफल!",
+      "success_text": "वापस स्वागत है!",
+      "error_title": "लॉगिन त्रुटि",
+      "error_text": "कृपया अपनी साख जांचें।"
+    },
+    "register": {
+      "success_title": "पंजीकरण सफल!",
+      "success_text": "आपका खाता बन गया है।",
+      "error_title": "पंजीकरण त्रुटि",
+      "error_text": "कृपया पुन: प्रयास करें।",
+      "email_exists_title": "ईमेल पहले से मौजूद है",
+      "email_exists_text": "ईमेल पहले से पंजीकृत है।"
     }
   },
   "publish": {
@@ -83,19 +97,34 @@
     }
   },
   "users": {
-    "search_label": "खोजें",
-    "search_placeholder": "नाम, ईमेल, फोन आदि से खोजें",
+    "search_label": "Buscar",
+    "search_placeholder": "Buscar por nombre, correo, teléfono, etc.",
     "table": {
-      "name": "नाम",
-      "email": "ईमेल",
-      "phone": "फोन",
-      "birthdate": "जन्म तिथि",
-      "status": "स्थिति",
-      "status_active": "सक्रिय",
-      "status_inactive": "निष्क्रिय",
-      "actions": "कार्रवाइयाँ"
+      "name": "Nombre",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "birthdate": "Fecha de Nacimiento",
+      "status": "Estado",
+      "status_active": "Activo",
+      "status_inactive": "Inactivo",
+      "actions": "Acciones"
     },
-    "paginator_label": "पृष्ठ चुनें",
-    "add_button": "नया उपयोगकर्ता जोड़ें"
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "password": "Contraseña",
+      "phone": "Teléfono",
+      "birthdate": "Fecha de Nacimiento",
+      "province": "Provincia",
+      "gender": "Género",
+      "status": "Estado",
+      "role": "Rol",
+      "role_user": "Usuario",
+      "role_admin": "Administrador",
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    },
+    "paginator_label": "Seleccionar página",
+    "add_button": "Agregar Nuevo Usuario"
   }
 }

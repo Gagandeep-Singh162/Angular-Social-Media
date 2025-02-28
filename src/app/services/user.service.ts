@@ -10,10 +10,10 @@ export interface User {
   password: string;
   phone: string;
   birthdate: string;
-  status: string;
-  role: string;
   province: string;
   gender: string;
+  status: number;
+  role: string;
 }
 
 @Injectable({
@@ -26,6 +26,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getAllGenders(): Observable<any[]> {
+    debugger;
     return this.http.get<any[]>(`${this.url}genders`);
   }
 
@@ -87,5 +88,9 @@ export class UserService {
 
   addUser(user: Partial<User>): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${user.id}`, user);
   }
 }

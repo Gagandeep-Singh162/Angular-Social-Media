@@ -8,8 +8,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { User, UserService } from '../../services/user.service';
+import { UserFormDialogComponent } from '../user-form-dialog/user-form-dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-table',
@@ -25,7 +28,7 @@ import { User, UserService } from '../../services/user.service';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    TranslateModule
+    TranslateModule,
   ],
 })
 export class UserDataComponent implements OnInit {
@@ -46,7 +49,11 @@ export class UserDataComponent implements OnInit {
   pageIndex = 0;
   searchValue = '';
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private dialog: MatDialog,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -78,25 +85,82 @@ export class UserDataComponent implements OnInit {
   }
 
   deleteUser(id: number): void {
-    this.userService.deleteUser(id).subscribe(() => {
-      this.dataSource.data = this.dataSource.data.filter(
-        (user) => user.id !== id
-      );
-      this.totalUsers = this.dataSource.data.length;
+    this.translate
+      .get([
+        'delete_confirm.title',
+        'delete_confirm.text',
+        'delete_confirm.confirm_button',
+        'delete_confirm.cancel_button',
+        'delete_success.title',
+        'delete_success.text',
+        'delete_error.title',
+        'delete_error.text',
+      ])
+      .subscribe((translations) => {
+        Swal.fire({
+          title: translations['delete_confirm.title'],
+          text: translations['delete_confirm.text'],
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: translations['delete_confirm.confirm_button'],
+          cancelButtonText: translations['delete_confirm.cancel_button'],
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.userService.deleteUser(id).subscribe({
+              next: () => {
+                this.dataSource.data = this.dataSource.data.filter(
+                  (user) => user.id !== id
+                );
+                this.totalUsers = this.dataSource.data.length;
+                Swal.fire(
+                  translations['delete_success.title'],
+                  translations['delete_success.text'],
+                  'success'
+                );
+              },
+              error: () => {
+                Swal.fire(
+                  translations['delete_error.title'],
+                  translations['delete_error.text'],
+                  'error'
+                );
+              },
+            });
+          }
+        });
+      });
+  }
+
+  editUser(user: User) {
+    const dialogRef = this.dialog.open(UserFormDialogComponent, {
+      data: { user },
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        const index = this.dataSource.data.findIndex((u) => u.id === result.id);
+        if (index !== -1) {
+          this.dataSource.data[index] = result;
+          this.dataSource._updateChangeSubscription();
+        }
+      }
     });
   }
 
-  addUser(): void {
-    const newUser: Partial<User> = {
-      name: 'New User',
-      email: 'newuser@example.com',
-      phone: '1234567890',
-      birthdate: '2000-01-01',
-      status: "1",
-    };
-    this.userService.addUser(newUser).subscribe((addedUser) => {
-      this.dataSource.data = [...this.dataSource.data, addedUser];
-      this.totalUsers = this.dataSource.data.length;
+  openAddUserDialog() {
+    const dialogRef = this.dialog.open(UserFormDialogComponent, {
+      data: {},
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.dataSource.data = [...this.dataSource.data, result];
+        this.totalUsers = this.dataSource.data.length;
+      }
     });
   }
 }
